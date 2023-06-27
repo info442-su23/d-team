@@ -6,7 +6,7 @@
 Team Name: Team D
 
 Team Members:
-*
+* Steven Hu
 
 Mission Statement:
 
