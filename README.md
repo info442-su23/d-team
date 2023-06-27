@@ -7,6 +7,7 @@ Team Name: Team D
 
 Team Members:
 * Steven Hu
+* Aviraj Singh
 
 Mission Statement:
 
