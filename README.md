@@ -8,7 +8,9 @@ Team Name: Team D
 Team Members:
 * Steven Hu
 * Aviraj Singh
+* Calvin Chan
 
 Mission Statement:
 
 Problem Statement:
+s
