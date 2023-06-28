@@ -4,11 +4,11 @@
 ## Team Dignity
 
 Team Members:
-	*Elisabeth - Product Designer
-	*Steven - Developer
-	*Sydney - Product Manager
-	*Calvin - Developer
-	*Avi - Developer
+*Elisabeth - Product Designer
+*Steven - Developer
+*Sydney - Product Manager
+*Calvin - Developer
+*Avi - Developer
 
 Mission Statement: Inform people of opportunities to help the homeless population
 
