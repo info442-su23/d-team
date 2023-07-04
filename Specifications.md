@@ -21,3 +21,44 @@ Patrick, Anna. “WA’s Homeless Population Is Increasing, New HUD Report Shows
 This application will enable people to help the homeless population in King County by increasing awareness and decreasing barriers to opportunities. Various volunteer locations will be presented through an interactive map, which the user can filter to find and sign up for specific opportunities. These volunteer opportunities will be posted by homeless shelters, food banks, and other organizations to recruit help. Additionally, information about these opportunities will be included to further encourage people to sign up, including what kind of help is needed and how many volunteers are needed.
 
 ## Design
+
+### Home Page
+
+[insert wireframes]
+
+Interaction Details:
+
+
+
+### Opportunity Map Page
+
+[insert wireframes]
+
+1. Map is zoomable and pannable
+2. Filter tab in top right corner, can be toggled to be hidden
+3. Filter tab includes togglable filter symbols representing location / opportunity types: donation center, food bank, and soup kitchen + in person and virtual
+4. Filter tab expands to show available opportunities; clicking on the opportunity zooms to the location on the map and includes more details + link to directions
+5. User can also click on locations represented by color coded dots instead of filtering
+
+### Profile Page
+
+![profile page wireframe](images/profilepage.png)
+
+![profile page consent form](images/consentform.png)
+
+Interaction Details:
+1. User can click on the edit profile button to edit their information
+2. User can fill out online waiver form and either save for later or submit for organizations to see
+
+### Opportunity Creator Page
+
+![opportunity creator page - not verified](images/creatornotverif.png)
+
+![opportunity creator page - verified](images/creatorverified.png)
+
+![opportunity creator page - error](images/creatorincomplete.png)
+
+Interaction Details:
+1. If user is not verified to create opportunities, can click on email to contact us through email to get verified.
+2. User can fill out the form and click on either save for later or submit buttons
+3. If user submits form with one of the required fields incomplete, a pop-up detailing the incomplete form is shown in red.
