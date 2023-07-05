@@ -10,7 +10,9 @@ Team Members:
 * Calvin:Developer
 * Avi:Developer
 
-Mission Statement: Increase flexibility, awareness of opportunities, and decrease barriers for volunteers to help the homeless in Seattle
+Mission Statement: 
+
+Increase flexibility, awareness of opportunities, and decrease barriers for volunteers to help the homeless in Seattle
 
 Problem Statement: 
 
