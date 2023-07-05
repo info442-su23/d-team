@@ -45,6 +45,7 @@ Opportunity Creator
 4. Once all fields are complete, user can submit opportunity, [otherwise the unfinished section will get hightlighted, and they will get an error message telling them to do so](https://github.com/info442-su23/d-team/blob/main/images/creatorincomplete.png)
 
 Solution Preview:
+
 ![homepage](https://github.com/info442-su23/d-team/blob/main/images/homepage.png)
 
 Citations: 
