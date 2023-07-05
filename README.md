@@ -29,22 +29,23 @@ This application will enable people to help the homeless population in King Coun
 Interaction Details:
 
 Opportunity Map Page
-1. Map is zoomable and pannable
-2. Filter tab in top left corner, can be toggled to be hidden
+1. [Opportunity Map](https://github.com/info442-su23/d-team/blob/main/images/mappage.png) is zoomable and pannable
+2. [Filter tab in top left corner](https://github.com/info442-su23/d-team/blob/main/images/mappagefilter.png), can be toggled to be hidden
 3. Filter tab includes togglable filter symbols representing location / opportunity types: donation center, food bank, and soup kitchen + in person and virtual
-4. Filter shows available opportunities on map; hovering over a location shows basic details, clicking on the opportunity zooms to the location on the map and includes more details + link to directions
-5. User can also click on locations instead of filtering
+4. Filter shows available opportunities on map; [hovering over a location shows basic details, clicking on the opportunity](https://github.com/info442-su23/d-team/blob/main/images/mappageelements.png) zooms to the location on the map and includes more details + link to directions. User can also click on locations instead of filtering
 
 Profile Page
-1. User can fill out online waiver/consent form - applies to all opportunities/locations
-2. Log in/sign out
+1. User can [fill out online waiver/consent form](https://github.com/info442-su23/d-team/blob/main/images/consentform.png) - applies to all opportunities/locations
+2. [Display and change profile info](https://github.com/info442-su23/d-team/blob/main/images/profilepage.png)
+3. Log in/sign out
 
 Opportunity Creator
-1. User can fill out a form to post an opportunity for volunteers
-2. Users must become verified first before becoming posted
-3. Displays verfied status to user; if user is not verified, they will be given instructions to email a link to their organization
-4. Once all fields are complete, user can submit opportunity
+1. Users [must become verified](https://github.com/info442-su23/d-team/blob/main/images/creatornotverif.png) first before being able to post. If user is not verified, they will be given instructions to email a link to their organization
+2. User can [fill out a form](https://github.com/info442-su23/d-team/blob/main/images/creatorverified.png) to post an opportunity for volunteers once verified
+4. Once all fields are complete, user can submit opportunity, [otherwise the unfinished section will get hightlighted, and they will get an error message telling them to do so](https://github.com/info442-su23/d-team/blob/main/images/creatorincomplete.png)
 
+Solution Preview:
+![homepage](https://github.com/info442-su23/d-team/blob/main/images/homepage.png)
 
 Citations: 
 
