@@ -24,15 +24,17 @@ This application will enable people to help the homeless population in King Coun
 
 ### Home Page
 
-[insert wireframes]
-
-Interaction Details:
+![homepage wireframe](images/homepage.png)
 
 
 
 ### Opportunity Map Page
 
+![map page wireframe](images/mappage.png)
+
 ![map page wireframe](images/mappageelements.png)
+
+![map page wireframe](images/mappagefilter.png)
 
 1. Map is zoomable and pannable
 2. Filter tab in top right corner, can be toggled to be hidden
