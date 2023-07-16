@@ -42,15 +42,22 @@ When the user is logged in:
 ## Opportunity Map Page
 This page will always contain:
 - O1a: Map of King County, with icon to expand filtering options
+
 ---
+
 ***Expandable/collapsible filtering options that will include:***
+
 - O1b1: Location selection: the user will be able to search a specific neighborhood by zip code and then select whether they would like to view opportunities within 1 mile, 5 miles, or 10+ miles of their selected neighborhood
 - O1b2: Volunteer type: checkbox list with types of volunteer opportunities the user can check/uncheck
 - O1b3: In person/virtual: checkboxes for user to check/uncheck to select whether they would like to do an in person or virtual opportunity (or either)
+
 ---
+
 - O1c: Apply button on filter options that applies selected filters
 - O1d: Icons pins on map that indicate opportunities available based on filters
+
 ---
+
 ***Pop-ups for each icon that display the following:***
 
 This pop-up will always contain:
@@ -74,8 +81,26 @@ If the user is signed up:
 
 If the opportunity is full:
 - O1d10: The sign up button is visible but grayed out and unable to be clicked with a message underneath telling the user to check back later
-- O1d11: Section that describes each type of volunteer opportunity icon (what it means and what that type of opportunity is typically like) 
-- O1d12: Button that redirects users to the opportunity creator page if they are a user looking to post an opportunity 
+- O1d11: Section that describes each type of volunteer opportunity icon (what it means and what that type of opportunity is typically like)
+- O1d12: Button that redirects users to the opportunity creator page if they are a user looking to post an opportunity
+
+---
+
+- O1e: Section that describes each type of volunteer opportunity icon (what it means and what that type of opportunity is typically like)
+
+---
+
+***Opportunity volunteer data should be:***
+
+- O1e1: The populated data from UW services should be formatted and parsed appropriately to extract relevant information
+- O1e2: Create tables or collections to accommodate the different data entities and relationships
+- O1e3: Check for missing, incomplete, or incorrect data and handle such cases gracefully
+- O1e4: Ensure that the populated data maps correctly to the icons on the opportunity map page
+
+---
+
+- O1f: Button that redirects users to the opportunity creator page if they are a user looking to post an opportunity
+
 ---
 
 When user is not logged in:
@@ -129,14 +154,21 @@ The footer will always contain the following:
 
 ## Stretch Requirements
 - Profile Picture interactions 
-- P3c: Profile picture must have an edit function to allow users to upload and display a profile picture to their account. Maximum size should be 1MB
-- P3d: On click of the profile picture, a pop-up page should appear prompting for an image upload through an “Upload New Picture” button
-- P3e: On click of “Upload New Picture” button, a file browser page should appear to allow users to browse through all files in the local device. Only JPG, JPEG and PNG formats will be allowed to upload. The file browser page disappears upon successful upload
-- P3f: Incompatible file formats are grayed out in the file browser page, indicating they cannot be chosen
-- P3g: Once a profile picture is uploaded, two buttons (“Save” and “Cancel”) should appear on the pop-up page
-- P3h: On click of “Save” button, the picture change is confirmed and the new profile picture should appear in the picture section of the login page. Pop-page should disappear
-- P3i: On click of “Cancel” button, the picture change is revoked. The file browser page disappears and the user returns to the pop-up page
+    - P3c: Profile picture must have an edit function to allow users to upload and display a profile picture to their account. Maximum size should be 1MB
+    - P3d: On click of the profile picture, a pop-up page should appear prompting for an image upload through an “Upload New Picture” button
+    - P3e: On click of “Upload New Picture” button, a file browser page should appear to allow users to browse through all files in the local device. Only JPG, JPEG and PNG formats will be allowed to upload. The file browser page disappears upon successful upload
+    - P3f: Incompatible file formats are grayed out in the file browser page, indicating they cannot be chosen
+    - P3g: Once a profile picture is uploaded, two buttons (“Save” and “Cancel”) should appear on the pop-up page
+    - P3h: On click of “Save” button, the picture change is confirmed and the new profile picture should appear in the picture section of the login page. Pop-page should disappear
+    - P3i: On click of “Cancel” button, the picture change is revoked. The file browser page disappears and the user returns to the pop-up page
 - Profile creation
+    - P4a: Profile creation page has a “Save”, “Submit” and “Cancel” button
+    - P4b: On click of “Save” button, previously entered user information is stored into the backend database
+    - P4c: When saved, user can retrieve previously entered information when opening profile creation page again
+    - P4d: On click of “Submit” button, user information is submitted and stored to the backend database, and the user can access the privileges of a registered account
+    - P4e: Profile information entered by users should be validated to ensure it meets the required format and all mandatory fields are provided
+    - P4f: Display appropriate error messages for any validation errors encountered
+    - P4g: The required profile information includes full name, email address, preferred username, password and address/neighborhood
 - Opportunities previously attended
 - Use SQL for the database
 - Automatic opportunity creator verification
