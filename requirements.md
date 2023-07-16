@@ -95,7 +95,7 @@ If the opportunity is full:
 - O1e1: The populated data from UW services should be formatted and parsed appropriately to extract relevant information
 - O1e2: Create tables or collections to accommodate the different data entities and relationships
 - O1e3: Check for missing, incomplete, or incorrect data and handle such cases gracefully
-- O1e4: Ensure that the populated data maps correctly to the icons on the opportunity map page
+- O1e4: Ensure that the populated data maps correctly to the icons on the opportunity map
 
 ---
 
@@ -172,4 +172,3 @@ The footer will always contain the following:
 - Opportunities previously attended
 - Use SQL for the database
 - Automatic opportunity creator verification
-
