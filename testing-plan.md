@@ -1,5 +1,18 @@
 # Testing Plan
 
+## Home Page and Footer
+
+
+- Expect to see the nav bar located at the top of the page. (Requirement N1a)
+- Expect to see a header image. (Requirement H1a)
+- Expect to see a “Dignity’s Goal” description explaining Diginity’s mission and purpose. (Requirement H1b)
+- Expect to see an “About Us” section with an introduction of the team. (Requirement H1c)
+- Expect to see the footer at the bottom of the page containing the following information: contact us, our email, and our phone number. (Requirements F1a-F1d) 
+
+
+### Context: User is not logged in
+- Expect to see a log in/sign up button. (Requirement H2a)
+
 ## Map Feature
 
 
