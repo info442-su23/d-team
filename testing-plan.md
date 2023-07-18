@@ -28,4 +28,5 @@
 - Expect to see updated pins on map page based on applied filters. (Requirement O1d)
 - Hover over a pin and expect to see basic opportunity info (location, opportunity type, time start, volunteers needed) (Requirement O1d1)
 - Click on pin and expect to see more detailed info (opportunity description, directions link to google maps, sign up button). (Requirement O1d2)
-- Click on sign up button and expect ‘volunteers needed’ count to go down by 1. (Requirement O1d6) 
+- Click on sign up button and expect ‘volunteers needed’ count to go down by 1. (Requirement O1d6)
+- Expect to no longer see the ‘sign up’ button and a cancel button displayed instead. (Requirement O1d7)
