@@ -63,7 +63,6 @@ This page will always contain:
 This pop-up will always contain:
 - O1d1: On hover, popup displays basic opportunity info (location, opportunity type, time start, volunteers needed)
 - O1d2: On click, popup expands to display more detailed info (opportunity description, directions link to google maps)
-- O1d3: The pop-up info and position will load from a spreadsheet
 
 If the user is not logged in:
 - O1d3: The expanded popup displays a button with a prompt to log in order to sign up for the opportunity 
@@ -143,7 +142,7 @@ When the user is logged in and their account is verified:
 - C3g: Form field prompting for donations needed is not required
 - C3h: Form field prompting for description about opportunity is required
 - C3i: On click of submit button, if a required field is left empty, an error message is shown
-- C3j: On click of submit button, if all required fields are filled in, the opportunity is added to a spreadsheet which loads the Opportunity Map
+- C3j: On click of submit button, if all required fields are filled in, the opportunity is added to the Opportunity Map Page
 - C3k: On click of submit button, if all required fields are filled in, user is shown a message informing the opportunity has been successfully created and is visible to other users
 
 ## Footer
