@@ -76,10 +76,10 @@ If the opportunity is full:
 - O1d10: The sign up button is visible but grayed out and unable to be clicked with a message underneath telling the user to check back later
 - O1d11: Section that describes each type of volunteer opportunity icon (what it means and what that type of opportunity is typically like) 
 - O1d12: Button that redirects users to the opportunity creator page if they are a user looking to post an opportunity 
----
 
 When user is not logged in:
-- O2: Button to redirect users to log in to get access to signing up for opportunities by signing waiver form detailed in P2
+- O1d13: Button to redirect users to log in to get access to signing up for opportunities by signing waiver form detailed in P2
+---
 
 ## Profile Page
 When user is not logged in:
