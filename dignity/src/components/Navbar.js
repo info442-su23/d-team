@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     const [selectedPage, setSelectedPage] = useState("Home");
@@ -21,12 +22,10 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="nav-links" style={{ display: 'flex', width: '100%', position: 'relative', alignItems: 'space-between', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 30, top: 20, right: 20, color: 'white', fontSize: 20, fontWeight: '700' }}>
-                <nav>
                     <div className={selectedPage === 'Home' ? 'active' : ''} onClick={() => handleOptionClick('Home')}>Home</div>
                     <div className={selectedPage === 'VolunteerMap' ? 'active' : ''} onClick={() => handleOptionClick('VolunteerMap')}><Link to={'/Map'}>Volunteer Map</Link></div>
                     <div className={selectedPage === 'Creator' ? 'active' : ''} onClick={() => handleOptionClick('Creator')}><Link to={'/Creator'}>Create Opportunity</Link></div>
                     <div className={selectedPage === 'LogIn' ? 'active' : ''} onClick={() => handleOptionClick('LogIn')}>Log In</div>
-                </nav>
             </div>
             <div className="Dignity" style={{ width: 143, height: 22, left: 97, top: 20, position: 'absolute', color: 'white', fontSize: 24, fontWeight: '700' }}>DIGNITY</div>
         </div>
