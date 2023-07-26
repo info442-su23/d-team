@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 export default function Navbar() {
+    const [selectedPage, setSelectedPage] = useState("Home");
+
+    const handleOptionClick = (page) => {
+        setSelectedPage(page);
+    };
 
     return (
         <div className="Navbar" style={{ width: '100%', height: 75, position: 'relative', background: '#32668C' }}>
@@ -16,10 +21,10 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="nav-links" style={{ display: 'flex', width: '100%', position: 'relative', alignItems: 'space-between', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 30, top: 20, right: 20, color: 'white', fontSize: 20, fontWeight: '700' }}>
-                <div className="Home">Home</div>
-                <div className="VolunteerMap">Volunteer Map</div>
-                <div className="Creator">Create Opportunity</div>
-                <div className="LogIn">Log In</div>
+                <div className={selectedPage === 'Home' ? 'active' : ''} onClick={() => handleOptionClick('Home')}>Home</div>
+                <div className={selectedPage === 'VolunteerMap' ? 'active' : ''} onClick={() => handleOptionClick('VolunteerMap')}>Volunteer Map</div>
+                <div className={selectedPage === 'Creator' ? 'active' : ''} onClick={() => handleOptionClick('Creator')}>Create Opportunity</div>
+                <div className={selectedPage === 'LogIn' ? 'active' : ''} onClick={() => handleOptionClick('LogIn')}>Log In</div>
             </div>
             <div className="Dignity" style={{ width: 143, height: 22, left: 97, top: 20, position: 'absolute', color: 'white', fontSize: 24, fontWeight: '700' }}>DIGNITY</div>
         </div>

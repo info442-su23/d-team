@@ -8,3 +8,8 @@
   width: 100%;
 }
 
+.nav-links div.active {
+  color: #01FFFF;
+  border-bottom: 2px solid #01FFFF;
+  transition: border-bottom 0.3s ease;
+}
