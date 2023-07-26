@@ -20,9 +20,9 @@ export default function Navbar() {
                 <nav>
                     <ul>
                         <li className="Home">Home</li>
-                        <li className="VolunteerMap"><Link to={'/map'}>Volunteer Map</Link></li>
+                        <li className="VolunteerMap"><Link to={'/Map'}>Volunteer Map</Link></li>
                         <li className="Creator"><Link to={'/Creator'}>Create Opportunity</Link></li>
-                        <li className="LogIn">Log In</li>
+                        <li className="LogIn">Log In</li> 
                     </ul>
                 </nav>
             </div>
@@ -30,3 +30,4 @@ export default function Navbar() {
         </div>
     )
 }
+
