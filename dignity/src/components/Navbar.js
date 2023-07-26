@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     const [selectedPage, setSelectedPage] = useState("Home");
