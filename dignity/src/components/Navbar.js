@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 
@@ -16,10 +17,14 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="nav-links" style={{ display: 'flex', width: '100%', position: 'relative', alignItems: 'space-between', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 30, top: 20, right: 20, color: 'white', fontSize: 20, fontWeight: '700' }}>
-                <div className="Home">Home</div>
-                <div className="VolunteerMap">Volunteer Map</div>
-                <div className="Creator">Create Opportunity</div>
-                <div className="LogIn">Log In</div>
+                <nav>
+                    <ul>
+                        <li className="Home">Home</li>
+                        <li className="VolunteerMap"><Link to={'/map'}>Volunteer Map</Link></li>
+                        <li className="Creator"><Link to={'/Creator'}>Create Opportunity</Link></li>
+                        <li className="LogIn">Log In</li>
+                    </ul>
+                </nav>
             </div>
             <div className="Dignity" style={{ width: 143, height: 22, left: 97, top: 20, position: 'absolute', color: 'white', fontSize: 24, fontWeight: '700' }}>DIGNITY</div>
         </div>
