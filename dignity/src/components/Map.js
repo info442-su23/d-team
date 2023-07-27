@@ -32,6 +32,14 @@ function Map() {
     setMap(null);
   }, []);
 
+  const onMarkerClick = () => {
+    console.log('Click!')
+  }
+
+  const onMarkerHover = () => {
+    console.log('Hover!')
+  }
+
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
@@ -40,8 +48,7 @@ function Map() {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      {/* Add a marker to the map */}
-      {map && <Marker position={center} map={map} />}
+      <Marker position={center} onClick={onMarkerClick} onMouseOver={onMarkerHover} />
     </GoogleMap>
   ) : <></>;
 }
