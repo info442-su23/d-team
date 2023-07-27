@@ -17,7 +17,7 @@ function Map() {
     googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0",
   });
 
-  const [setMap] = React.useState(null);
+  const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(mapInstance) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
@@ -26,6 +26,7 @@ function Map() {
 
     // Store the map instance in the state variable
     setMap(mapInstance);
+    setMap(map)
   }, []);
 
   const onUnmount = React.useCallback(function callback() {
