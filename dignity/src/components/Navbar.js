@@ -1,11 +1,28 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import SignIn from './SignIn'; 
 
 export default function Navbar() {
     const [selectedPage, setSelectedPage] = useState("Home");
+    const [showSignIn, setShowSignIn] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [users, setUsers] = useState([]);
 
     const handleOptionClick = (page) => {
         setSelectedPage(page);
+    };
+
+    const handleSignInClick = () => {
+        setShowSignIn(true);
+    };
+    
+    const handleSignInClose = () => {
+        setShowSignIn(false);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('userToken');
+        setLoggedIn(false);
     };
 
     return (
@@ -22,12 +39,43 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="nav-links" style={{ display: 'flex', width: '100%', position: 'relative', alignItems: 'space-between', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 30, top: 20, right: 20, color: 'white', fontSize: 20, fontWeight: '700' }}>
-                    <div className={selectedPage === 'Home' ? 'active' : ''} onClick={() => handleOptionClick('Home')}>Home</div>
-                    <div className={selectedPage === 'VolunteerMap' ? 'active' : ''} onClick={() => handleOptionClick('VolunteerMap')}><Link to={'/Map'}>Volunteer Map</Link></div>
-                    <div className={selectedPage === 'Creator' ? 'active' : ''} onClick={() => handleOptionClick('Creator')}><Link to={'/Creator'}>Create Opportunity</Link></div>
-                    <div className={selectedPage === 'LogIn' ? 'active' : ''} onClick={() => handleOptionClick('LogIn')}>Log In</div>
-            </div>
+                <div
+                    className={selectedPage === 'Home' ? 'active' : ''}
+                    onClick={() => handleOptionClick('Home')}
+                >
+                    Home
+                </div>
+                <div
+                    className={selectedPage === 'VolunteerMap' ? 'active' : ''}
+                    onClick={() => handleOptionClick('VolunteerMap')}
+                >
+                    <Link to={'/Map'}>Volunteer Map</Link>
+                </div>
+                <div
+                    className={selectedPage === 'Creator' ? 'active' : ''}
+                    onClick={() => handleOptionClick('Creator')}
+                >
+                    <Link to={'/Creator'}>Create Opportunity</Link>
+                </div>
+                {loggedIn ? (
+                    <div
+                        onClick={handleLogout}
+                        className={`logout ${selectedPage === 'LogOut' ? 'active' : ''}`}
+                    >
+                        Log Out
+                    </div>
+                ) : (
+                    <div
+                        onClick={handleSignInClick}
+                        className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}
+                    >
+                        Log In
+                    </div>
+                )}
+                </div>
             <div className="Dignity" style={{ width: 143, height: 22, left: 97, top: 20, position: 'absolute', color: 'white', fontSize: 24, fontWeight: '700' }}>DIGNITY</div>
+
+            {showSignIn && <SignIn onClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} />}
         </div>
     )
 }
