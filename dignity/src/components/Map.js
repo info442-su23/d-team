@@ -26,6 +26,7 @@ function Map() {
 
     // Store the map instance in the state variable
     setMap(mapInstance);
+    setMap(map)
   }, []);
 
   const onUnmount = React.useCallback(function callback() {

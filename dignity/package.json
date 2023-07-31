@@ -17,7 +17,8 @@
     "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-	"start:win": "react-scripts start"
+	"start:win": "react-scripts start",
+	"build:win": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
