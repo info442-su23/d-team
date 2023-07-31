@@ -8,8 +8,90 @@
   width: 100%;
 }
 
-.nav-links div.active {
+.nav-links div {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links div:hover {
+  border-bottom: 2px solid white;
+}
+
+.nav-links div.active,
+.nav-links div.active a {
   color: #01FFFF;
   border-bottom: 2px solid #01FFFF;
-  transition: border-bottom 0.3s ease;
+}
+
+.nav-links div.login.active,
+.nav-links div.logout.active {
+  color: #01FFFF;
+  border-bottom: 2px solid #01FFFF;
+}
+
+.nav-links div a {
+  color: white;
+  text-decoration: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+  margin-bottom: 16px;
+  max-width: 280px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-button {
+  background-color: #dc3545;
 }
