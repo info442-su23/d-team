@@ -1,3 +1,4 @@
+/* Map */
 .Map {
   height: 100vh;
   width: 100vw;
@@ -8,6 +9,7 @@
   width: 100%;
 }
 
+/* Nav */
 .nav-links div {
   color: white;
   text-decoration: none;
@@ -34,7 +36,7 @@
   color: white;
   text-decoration: none;
 }
-
+/* Sign in/out */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -94,4 +96,27 @@ button {
 
 .close-button {
   background-color: #dc3545;
+}
+
+/* Creator */
+
+.creator-content {
+  text-align: center;
+}
+
+.creator-header {
+  font-size: 3rem;
+  color: #32668C;
+}
+
+.creator-desc {
+  color: #4F9DD6;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.creator-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
