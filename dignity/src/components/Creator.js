@@ -9,7 +9,7 @@ export default function Creator() {
                 Do you work for a nonprofit and want to share a volunteer opportunity on our page? Fill out the form below and volunteers will be able to sign up directly from the volunteer map!
             </p>
             <div className="creator-form">
-                <iframe title="creator-form" src="https://docs.google.com/forms/d/e/1FAIpQLSep7FNKzVVquhesfR1LmgIJ6bHUr4YTwJtZ7dFEOPu8gE7cEw/viewform?embedded=true" width="640" height="2050" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe title="creator-form" src="https://docs.google.com/forms/d/e/1FAIpQLSep7FNKzVVquhesfR1LmgIJ6bHUr4YTwJtZ7dFEOPu8gE7cEw/viewform?embedded=true" >Loading…</iframe>
             </div>
         </div>
     )
