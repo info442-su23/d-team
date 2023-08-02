@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import Geocode from "react-geocode";
 
 const containerStyle = {
   width: '400px',
@@ -17,6 +18,17 @@ const EXAMPLE_MARKERS = [
   {id: 2, location:"location3", center:{lat: 47.58712669696925, lng: -122.32873333900736}} 
 ];
 
+Geocode.setApiKey("AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0");
+
+Geocode.fromAddress("8632 39th Ave SW, 98136 Washington, USA").then(
+  (response) => {
+    const { lat, lng } = response.results[0].geometry.location;
+    console.log(lat, lng);
+  },
+  (error) => {
+    console.error(error);
+  }
+);
 const onMarkerClick = () => {
   console.log('Click!')
 }
@@ -36,12 +48,12 @@ const onMarkerHover = () => {
 export function MarkerList(prop) {
   const markers = prop.markers;
   const markerList = markers.map((marker) => {
-    console.log(marker);
+    //console.log(marker);
     return (
         <Marker position={marker.center} key={marker.id.toString() } onClick={onMarkerClick} onMouseOver={onMarkerHover}/>
     );  
   });
-  console.log(markerList);
+  //console.log(markerList);
   return(
       <section className="markers">
         { markerList };
