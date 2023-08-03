@@ -6,6 +6,7 @@ import Map from "./Map";
 import Creator from "./Creator";
 
 const App = () => {
+  
   return (
     <div className="App">
       <Navbar />
