@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Creator() {
-
     return (
         <div className="creator-content">
             <h1 className="creator-header">Creator Form</h1>
@@ -13,5 +12,4 @@ export default function Creator() {
             </div>
         </div>
     )
-
 }
