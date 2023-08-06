@@ -13,8 +13,7 @@ const EXAMPLE_MARKERS = [
     {id: 2, location:"location3", center:{lat: 47.58712669696925, lng: -122.32873333900736}, volunteers: 16} 
 ];
 
-function Map({ loggedIn, setLoggedIn }) {
-    setLoggedIn(true);
+function Map({ loggedIn }) {
     console.log(loggedIn);
     const [activeMarker, setActiveMarker] = useState(null);
 

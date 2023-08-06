@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
+export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, setUsers }) {
     const navigate = useNavigate();
     const [signInMode, setSignInMode] = useState(true);
     const [error, setError] = useState(false);
@@ -66,7 +66,7 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
     
         setLoggedIn(true);
         onClose();
-        navigate('/Navbar');
+        navigate('/HomePage');
     };
 
     const handleSubmit = (event) => {
@@ -85,9 +85,11 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
             // Sign In mode
             const user = users.find(user => user.username === username && user.password === password);
             if (user) {
+                onLoginSuccess(username, user.email, user.password);
+
                 setLoggedIn(true);
                 onClose();
-                navigate('/Navbar');
+                navigate('/HomePage');
             } 
             else {
                 setError(true);
@@ -99,9 +101,12 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
             const newUser = { username, password, email };
             setUsers(prevUsers => [...prevUsers, newUser]);
             setNewUser(newUser);
+
+            onLoginSuccess(username, email, password);
+
             setLoggedIn(true);
             onClose();
-            navigate('/Navbar');
+            navigate('/HomePage');
         }
     };
 
