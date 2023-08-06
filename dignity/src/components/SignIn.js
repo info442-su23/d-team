@@ -5,7 +5,7 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
     const navigate = useNavigate();
     const [signInMode, setSignInMode] = useState(true);
     const [error, setError] = useState(false);
-    const [newUser, setNewUser] = useState(null);
+    const [newUser, setNewUser] = useState(null); // eslint-disable-line no-unused-vars
     const [errorMessage, setErrorMessage] = useState('');
     const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [forgotPasswordError, setForgotPasswordError] = useState(false);
@@ -18,7 +18,7 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
         if (storedUsers) {
             setUsers(JSON.parse(storedUsers));
         }
-    }, []);
+    }, [setUsers]);
 
     useEffect(() => {
         localStorage.setItem('users', JSON.stringify(users));
