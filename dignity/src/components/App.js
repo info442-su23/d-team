@@ -7,21 +7,21 @@ import Creator from "./Creator";
 import { useLoadScript } from "@react-google-maps/api";
 
 const App = () => {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0" 
-  });
+    const { isLoaded } = useLoadScript({
+        googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0" 
+    });
 
-  const [testLogin, setTestLogin] = useState(true);
+    const [testLogin, setTestLogin] = useState(true);
 
-  return (
-    <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/Map" element={isLoaded ? <Map loggedIn={ testLogin } setLoggedIn={setTestLogin}/> : null} />
-        <Route path="/Creator" element={<Creator />} />
-      </Routes>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Navbar />
+            <Routes>
+                <Route path="/Map" element={isLoaded ? <Map loggedIn={ testLogin } setLoggedIn={setTestLogin}/> : null} />
+                <Route path="/Creator" element={<Creator />} />
+            </Routes>
+        </div>
+    );
 };
 
 export default App;
