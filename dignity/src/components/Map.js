@@ -17,7 +17,7 @@ function Map() {
     googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0",
   });
 
-  const [map, setMap] = React.useState(null);
+  const [map, setMap] = React.useState(null); // eslint-disable-line no-unused-vars
 
   const onLoad = React.useCallback(function callback(mapInstance) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
@@ -26,12 +26,11 @@ function Map() {
 
     // Store the map instance in the state variable
     setMap(mapInstance);
-    setMap(map)
-  }, []);
+  }, [setMap]);
 
   const onUnmount = React.useCallback(function callback() {
     setMap(null);
-  }, []);
+  }, [setMap]);
 
   const onMarkerClick = () => {
     console.log('Click!')
