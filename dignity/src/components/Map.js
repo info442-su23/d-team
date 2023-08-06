@@ -44,7 +44,7 @@ function Map() {
     googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0",
   });
 
-  const [map, setMap] = React.useState(null);
+  const [map, setMap] = React.useState(null); // eslint-disable-line no-unused-vars
 
   const [activeMarker, setActiveMarker] = React.useState(null);
 
@@ -62,12 +62,11 @@ function Map() {
 
     // Store the map instance in the state variable
     setMap(mapInstance);
-    setMap(map)
-  }, []);
+  }, [setMap]);
 
   const onUnmount = React.useCallback(function callback() {
     setMap(null);
-  }, []);
+  }, [setMap]);
 
   return isLoaded ? (
     <GoogleMap
