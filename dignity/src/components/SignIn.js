@@ -73,7 +73,7 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
         event.preventDefault();
         const username = event.target.username.value;
         const password = event.target.password.value;
-        const email = event.target.email.value;
+        const email = signInMode ? null : event.target.email.value; 
 
         if (!signInMode && (!username || !password || !email)) {
             setError(true);

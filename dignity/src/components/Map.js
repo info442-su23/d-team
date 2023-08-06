@@ -4,8 +4,8 @@ import Geocode from "react-geocode";
 import useGoogleSheetsData from "../index";
 
 const center = {
-  lat: 47.604232774105725, 
-  lng: -122.32661497671403
+    lat: 47.604232774105725, 
+    lng: -122.32661497671403
 };
 
 
@@ -22,17 +22,23 @@ function Map({ loggedIn, setLoggedIn }) {
   console.log(loggedIn);
   const [activeMarker, setActiveMarker] = useState(null);
 
-  const handleActiveMarker = (marker) => {
-    if (marker === activeMarker) {
-      return marker;
-    }
-    setActiveMarker(marker);
-  };
-  
-  const handleOnLoad = (map) => {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-  };
+
+function Map({ loggedIn, setLoggedIn }) {
+    setLoggedIn(true);
+    console.log(loggedIn);
+    const [activeMarker, setActiveMarker] = useState(null);
+
+    const handleActiveMarker = (marker) => {
+        if (marker === activeMarker) {
+            return marker;
+        }
+        setActiveMarker(marker);
+    };
+    
+    const handleOnLoad = (map) => {
+        const bounds = new window.google.maps.LatLngBounds(center);
+        map.fitBounds(bounds);
+    };
 
   return (
     <GoogleMap
