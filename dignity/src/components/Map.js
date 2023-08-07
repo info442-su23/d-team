@@ -16,23 +16,31 @@ const EXAMPLE_MARKERS = [
 ];
 
 
+<<<<<<< Updated upstream
 function Map({ loggedIn, setLoggedIn }) {
     setLoggedIn(true);
     console.log(loggedIn);
   
     const [activeMarker, setActiveMarker] = useState(null);
+=======
+function Map({ loggedIn, setLoggedIn, users, setUsers, onLoginSuccess }) {
+  setLoggedIn(true);
+  console.log(loggedIn);
+>>>>>>> Stashed changes
 
-    const handleActiveMarker = (marker) => {
-        if (marker === activeMarker) {
-            return marker;
-        }
-        setActiveMarker(marker);
-    };
-    
-    const handleOnLoad = (map) => {
-        const bounds = new window.google.maps.LatLngBounds(center);
-        map.fitBounds(bounds);
-    };
+  const [activeMarker, setActiveMarker] = useState(null);
+
+  const handleActiveMarker = (marker) => {
+      if (marker === activeMarker) {
+          return marker;
+      }
+      setActiveMarker(marker);
+  };
+  
+  const handleOnLoad = (map) => {
+      const bounds = new window.google.maps.LatLngBounds(center);
+      map.fitBounds(bounds);
+  };
 
   return (
     <GoogleMap
@@ -62,7 +70,7 @@ function Map({ loggedIn, setLoggedIn }) {
               </section>
             ) : (
               <section>
-                <button type="submit" style={{ marginTop: '8px' }}>Sign in</button>
+                <div onClick={handleSignInClick} className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}>Log In</div>
                 <div>You need to sign in to volunteer!</div>
               </section>
         
@@ -71,6 +79,7 @@ function Map({ loggedIn, setLoggedIn }) {
           ) : null}
         </MarkerF>
       ))}
+      <SignIn onClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} onLoginSuccess={onLoginSuccess} />
     </GoogleMap>
   );
 }
