@@ -5,17 +5,19 @@ import SignIn from './SignIn';
 export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, setUsers, onLoginSuccess }) {
     const navigate = useNavigate();
     const [selectedPage, setSelectedPage] = useState("Home");
-
+    
     const handleOptionClick = (page) => {
         setSelectedPage(page);
     };
 
     const handleSignInClick = () => {
         setShowSignIn(true);
+        console.log(showSignIn);
     };
 
     const handleSignInClose = () => {
         setShowSignIn(false);
+        console.log(showSignIn);
     };
 
     const handleLogout = () => {
@@ -59,7 +61,9 @@ export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignI
                     <div onClick={handleSignInClick} className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}>Log In</div>
                 )}
             </div>
-            {showSignIn && <SignIn onClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} onLoginSuccess={onLoginSuccess} />}
+
+            {showSignIn && <SignIn handleSignInClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} onLoginSuccess={onLoginSuccess} />}
+
         </div>
     );
 }
