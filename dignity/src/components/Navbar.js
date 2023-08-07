@@ -2,22 +2,31 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SignIn from './SignIn';
 
+<<<<<<< Updated upstream
 export default function Navbar() {
     const [selectedPage, setSelectedPage] = useState("Home");
     const [showSignIn, setShowSignIn] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     const [users, setUsers] = useState([]);
+=======
+export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, setUsers, onLoginSuccess }) {
+>>>>>>> Stashed changes
 
+    const [selectedPage, setSelectedPage] = useState("Home");
+    const navigate = useNavigate();
+    
     const handleOptionClick = (page) => {
         setSelectedPage(page);
     };
 
     const handleSignInClick = () => {
         setShowSignIn(true);
+        console.log(showSignIn);
     };
 
     const handleSignInClose = () => {
         setShowSignIn(false);
+        console.log(showSignIn);
     };
 
     const handleLogout = () => {
@@ -55,7 +64,11 @@ export default function Navbar() {
                     <div onClick={handleSignInClick} className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}>Log In</div>
                 )}
             </div>
+<<<<<<< Updated upstream
             {showSignIn && <SignIn onClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} />}
+=======
+            {showSignIn && <SignIn handleSignInClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} onLoginSuccess={onLoginSuccess} />}
+>>>>>>> Stashed changes
         </div>
     );
 }

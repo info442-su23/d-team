@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+<<<<<<< Updated upstream
 export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
+=======
+export default function SignIn ({ handleSignInClose, setLoggedIn, users, setUsers }) {
+>>>>>>> Stashed changes
     const navigate = useNavigate();
     const [signInMode, setSignInMode] = useState(true);
     const [error, setError] = useState(false);
@@ -25,10 +29,12 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
     }, [users]);
 
     const toggleMode = () => {
+        console.log(signInMode);
         setSignInMode(prevMode => !prevMode);
         setError(false);
         setErrorMessage('');
     };
+    
 
     const handleForgotPasswordClick = () => {
         setShowForgotPassword(true);
@@ -65,7 +71,11 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
         setUsers(prevUsers => [...prevUsers]);
     
         setLoggedIn(true);
+<<<<<<< Updated upstream
         onClose();
+=======
+        handleSignInClose();
+>>>>>>> Stashed changes
         navigate('/Navbar');
     };
 
@@ -73,7 +83,7 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
         event.preventDefault();
         const username = event.target.username.value;
         const password = event.target.password.value;
-        const email = signInMode ? null : event.target.email.value; 
+        const email = event.target.email.value;
 
         if (!signInMode && (!username || !password || !email)) {
             setError(true);
@@ -86,7 +96,11 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
             const user = users.find(user => user.username === username && user.password === password);
             if (user) {
                 setLoggedIn(true);
+<<<<<<< Updated upstream
                 onClose();
+=======
+                handleSignInClose();
+>>>>>>> Stashed changes
                 navigate('/Navbar');
             } 
             else {
@@ -100,7 +114,11 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
             setUsers(prevUsers => [...prevUsers, newUser]);
             setNewUser(newUser);
             setLoggedIn(true);
+<<<<<<< Updated upstream
             onClose();
+=======
+            handleSignInClose();
+>>>>>>> Stashed changes
             navigate('/Navbar');
         }
     };
@@ -176,7 +194,7 @@ export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
                             </div>
                         </form>
                     </div>
-                    <button className="close-button" onClick={onClose} style={{ marginTop: '8px' }}>Close</button>
+                    <button className="close-button" onClick={handleSignInClose} style={{ marginTop: '8px' }}>Close</button>
                 </>
                 )}
             </div>
