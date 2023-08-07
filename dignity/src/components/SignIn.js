@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-<<<<<<< Updated upstream
-export default function SignIn ({ onClose, setLoggedIn, users, setUsers }) {
-=======
+
 export default function SignIn ({ handleSignInClose, setLoggedIn, users, setUsers }) {
->>>>>>> Stashed changes
+
     const navigate = useNavigate();
     const [signInMode, setSignInMode] = useState(true);
     const [error, setError] = useState(false);
@@ -71,12 +69,11 @@ export default function SignIn ({ handleSignInClose, setLoggedIn, users, setUser
         setUsers(prevUsers => [...prevUsers]);
     
         setLoggedIn(true);
-<<<<<<< Updated upstream
-        onClose();
-=======
+
         handleSignInClose();
->>>>>>> Stashed changes
+
         navigate('/Navbar');
+
     };
 
     const handleSubmit = (event) => {
@@ -95,13 +92,14 @@ export default function SignIn ({ handleSignInClose, setLoggedIn, users, setUser
             // Sign In mode
             const user = users.find(user => user.username === username && user.password === password);
             if (user) {
+                onLoginSuccess(username, user.email, user.password);
+
                 setLoggedIn(true);
-<<<<<<< Updated upstream
-                onClose();
-=======
+
                 handleSignInClose();
->>>>>>> Stashed changes
+
                 navigate('/Navbar');
+
             } 
             else {
                 setError(true);
@@ -113,13 +111,15 @@ export default function SignIn ({ handleSignInClose, setLoggedIn, users, setUser
             const newUser = { username, password, email };
             setUsers(prevUsers => [...prevUsers, newUser]);
             setNewUser(newUser);
+
+            onLoginSuccess(username, email, password);
+
             setLoggedIn(true);
-<<<<<<< Updated upstream
-            onClose();
-=======
+
             handleSignInClose();
->>>>>>> Stashed changes
-            navigate('/Navbar');
+
+            navigate('/');
+
         }
     };
 

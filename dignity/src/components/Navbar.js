@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SignIn from './SignIn';
 
-<<<<<<< Updated upstream
-export default function Navbar() {
-    const [selectedPage, setSelectedPage] = useState("Home");
-    const [showSignIn, setShowSignIn] = useState(false);
-    const [loggedIn, setLoggedIn] = useState(false);
-    const [users, setUsers] = useState([]);
-=======
 export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, setUsers, onLoginSuccess }) {
->>>>>>> Stashed changes
-
-    const [selectedPage, setSelectedPage] = useState("Home");
     const navigate = useNavigate();
+    const [selectedPage, setSelectedPage] = useState("Home");
     
     const handleOptionClick = (page) => {
         setSelectedPage(page);
@@ -32,6 +23,7 @@ export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignI
     const handleLogout = () => {
         localStorage.removeItem('userToken');
         setLoggedIn(false);
+        navigate('/HomePage');
     };
 
     return (
@@ -48,10 +40,15 @@ export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignI
                         <div className="Vector" style={{ width: 8, height: 20, left: 24, top: 14.01, position: 'absolute', border: '1px white solid' }}></div>
                     </div>
                 </div>
-                <div className="Dignity" style={{ color: 'white', fontSize: 24, fontWeight: '700', marginLeft: 10 }}>DIGNITY</div>
+                <div className="Dignity" style={{ color: 'white', fontSize: 24, fontWeight: '700', marginLeft: 10 }}><Link to={'/'}>DIGNITY</Link></div>
             </div>
             <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 30, color: 'white', fontSize: 20, fontWeight: '700' }}>
-                <div className={selectedPage === 'Home' ? 'active' : ''} onClick={() => handleOptionClick('Home')}>Home</div>
+                <div className={selectedPage === 'HomePage' ? 'active' : ''} onClick={() => handleOptionClick('HomePage')}>
+                    <Link to={'/'}>Home</Link>
+                </div>
+                <div className={selectedPage === 'Profile' ? 'active' : ''} onClick={() => handleOptionClick('Profile')}>
+                    <Link to={'/Profile'}>Profile</Link>
+                </div>
                 <div className={selectedPage === 'VolunteerMap' ? 'active' : ''} onClick={() => handleOptionClick('VolunteerMap')}>
                     <Link to={'/Map'}>Volunteer Map</Link>
                 </div>
@@ -64,11 +61,9 @@ export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignI
                     <div onClick={handleSignInClick} className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}>Log In</div>
                 )}
             </div>
-<<<<<<< Updated upstream
-            {showSignIn && <SignIn onClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} />}
-=======
+
             {showSignIn && <SignIn handleSignInClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} onLoginSuccess={onLoginSuccess} />}
->>>>>>> Stashed changes
+
         </div>
     );
 }

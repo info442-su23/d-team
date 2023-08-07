@@ -15,30 +15,9 @@ const EXAMPLE_MARKERS = [
   {id: 2, location:"University District Food Bank", center:{lat: 47.58712669696925, lng: -122.32873333900736}, volunteers: 16} 
 ];
 
-<<<<<<< Updated upstream
-function Map({ loggedIn, setLoggedIn }) {
-  const locations = useGoogleSheetsData();
-  console.log(locations);
-  setLoggedIn(true);
-  console.log(loggedIn);
-  const [activeMarker, setActiveMarker] = useState(null);
-
-
-<<<<<<< Updated upstream
-function Map({ loggedIn, setLoggedIn }) {
-    setLoggedIn(true);
-    console.log(loggedIn);
-    const [activeMarker, setActiveMarker] = useState(null);
-=======
-function Map({ loggedIn, setLoggedIn, users, setUsers, onLoginSuccess }) {
-  setLoggedIn(true);
-  console.log(loggedIn);
->>>>>>> Stashed changes
-=======
 export function Map({ loggedIn, setLoggedIn, users, setUsers, onLoginSuccess, selectedPage, handleSignInClick, handleSignInClose, showSignIn, setShowSignIn }) {
 
   //setLoggedIn(true);
->>>>>>> Stashed changes
 
   const [activeMarker, setActiveMarker] = useState(null);
 
