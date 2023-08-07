@@ -6,7 +6,7 @@ export default function HomePage() {
         <div className="home">
             <div className="overlap-group-wrapper">
                 <div className="overlap-group">
-                    <img className="image" alt="Image" src="src/imgs/HomePageHeader.jpeg" />
+                    <img className="image" alt="Image" src="imgs/HomePageHeader.jpeg" />
                     <h1 className="element-people-in">
                         <span className="text-wrapper">53,500</span>
                         <span className="span"> People in King County experienced homelessness in 2022...</span>
@@ -39,7 +39,7 @@ export default function HomePage() {
                         <img className="line-2" alt="Line" src="line-1-2.svg" />
                         <img className="line-3" alt="Line" src="line-2-3.svg" />
                     </div>
-                        <p className="check-out-volunteer">Check Out Volunteer Opportunities In Your Area On The Opportunity Map!</p>
+                    <p className="check-out-volunteer">Check Out Volunteer Opportunities In Your Area On The Opportunity Map!</p>
                     <div className="rectangle-4" />
                     <div className="text-wrapper-6">Explore Map!</div>
                     <div className="rectangle-3" />
@@ -52,14 +52,14 @@ export default function HomePage() {
                     <div className="rectangle-6" />
                     <div className="rectangle-7" />
                     <div className="rectangle-8" />
-                        <img className="crop-square" alt="Crop square" src="src/imgs/elisabeth.png" />
-                        <img className="element" alt="Element" src="src/imgs/steven.png" />
+                    <img className="crop-square" alt="Crop square" src="imgs/elisabeth.png" />
+                    <img className="element" alt="Element" src="imgs/steven.png" />
                     <div className="sydney-morales">&nbsp;&nbsp;Sydney Morales</div>
                     <div className="text-wrapper-8">Elisabeth Helleberg</div>
                     <div className="text-wrapper-9">Steven Hu</div>
                     <div className="project-manager"> Project Manager</div>
-                        <img className="ddff-d" alt="Ddff d" src="src/imgs/sydney.png" />
-                        <img className="element-fabb-a" alt="Element" src="src/imgs/calvin.png" />
+                    <img className="ddff-d" alt="Ddff d" src="imgs/sydney.png" />
+                    <img className="element-fabb-a" alt="Element" src="imgs/calvin.png" />
                     <div className="text-wrapper-10">Product Designer</div>
                     <div className="text-wrapper-11">Developer</div>
                     <div className="text-wrapper-12">Calvin Chan</div>
