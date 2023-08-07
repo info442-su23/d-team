@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SignIn from './SignIn';
 
-export default function Navbar() {
+export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, setUsers, onLoginSuccess }) {
+    const navigate = useNavigate();
     const [selectedPage, setSelectedPage] = useState("Home");
-    const [showSignIn, setShowSignIn] = useState(false);
-    const [loggedIn, setLoggedIn] = useState(false);
-    const [users, setUsers] = useState([]);
 
     const handleOptionClick = (page) => {
         setSelectedPage(page);
@@ -23,6 +21,7 @@ export default function Navbar() {
     const handleLogout = () => {
         localStorage.removeItem('userToken');
         setLoggedIn(false);
+        navigate('/HomePage');
     };
 
     return (
@@ -42,7 +41,12 @@ export default function Navbar() {
                 <div className="Dignity" style={{ color: 'white', fontSize: 24, fontWeight: '700', marginLeft: 10 }}>DIGNITY</div>
             </div>
             <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 30, color: 'white', fontSize: 20, fontWeight: '700' }}>
-                <div className={selectedPage === 'Home' ? 'active' : ''} onClick={() => handleOptionClick('Home')}>Home</div>
+                <div className={selectedPage === 'HomePage' ? 'active' : ''} onClick={() => handleOptionClick('HomePage')}>
+                    <Link to={'/HomePage'}>Home</Link>
+                </div>
+                <div className={selectedPage === 'Profile' ? 'active' : ''} onClick={() => handleOptionClick('Profile')}>
+                    <Link to={'/Profile'}>Profile</Link>
+                </div>
                 <div className={selectedPage === 'VolunteerMap' ? 'active' : ''} onClick={() => handleOptionClick('VolunteerMap')}>
                     <Link to={'/Map'}>Volunteer Map</Link>
                 </div>
@@ -55,7 +59,7 @@ export default function Navbar() {
                     <div onClick={handleSignInClick} className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}>Log In</div>
                 )}
             </div>
-            {showSignIn && <SignIn onClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} />}
+            {showSignIn && <SignIn onClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} onLoginSuccess={onLoginSuccess} />}
         </div>
     );
 }

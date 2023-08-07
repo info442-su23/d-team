@@ -15,17 +15,11 @@ const EXAMPLE_MARKERS = [
   {id: 2, location:"University District Food Bank", address: "5017 Roosevelt Way NE Seattle, WA 98105", volunteers: 16} 
 ];
 
-function Map({ loggedIn, setLoggedIn }) {
-  const locations = useGoogleSheetsData();
-  console.log(locations);
-  setLoggedIn(true);
-  console.log(loggedIn);
-  const [activeMarker, setActiveMarker] = useState(null);
-
 
 function Map({ loggedIn, setLoggedIn }) {
     setLoggedIn(true);
     console.log(loggedIn);
+  
     const [activeMarker, setActiveMarker] = useState(null);
 
     const handleActiveMarker = (marker) => {
