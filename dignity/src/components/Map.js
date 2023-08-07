@@ -16,17 +16,9 @@ const EXAMPLE_MARKERS = [
 ];
 
 
-<<<<<<< Updated upstream
-function Map({ loggedIn, setLoggedIn }) {
-    setLoggedIn(true);
-    console.log(loggedIn);
-  
-    const [activeMarker, setActiveMarker] = useState(null);
-=======
 function Map({ loggedIn, setLoggedIn, users, setUsers, onLoginSuccess }) {
   setLoggedIn(true);
   console.log(loggedIn);
->>>>>>> Stashed changes
 
   const [activeMarker, setActiveMarker] = useState(null);
 

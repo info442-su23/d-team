@@ -1,3 +1,11 @@
+.App {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    padding-bottom: 2.5rem;
+}
 /* Map */
 .Map {
     height: 100vh;
@@ -77,6 +85,11 @@
     color: white;
     font-size: 24px;
     font-weight: 700;
+}
+
+.Dignity a {
+    text-decoration: none;
+    color: white;
 }
 
 /* Sign in/out */
@@ -178,14 +191,14 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
 }
 
 .home .overlap-group-wrapper {
     background-color: #ffffff;
     border: 1px none;
     height: 2592px;
-    width: 1280px;
+    width: 100vw;
 }
 
 .home .overlap-group {
@@ -199,7 +212,7 @@ button {
     object-fit: cover;
     position: absolute;
     top: 0;
-    width: 1280px;
+    width: 100vw;
 }
 
 .home .element-people-in {
@@ -613,74 +626,54 @@ button {
 
 
 /* Footer */
-.footerBox {
-    border: 0px none;
-    height: 85.42px;
-    overflow-x: hidden;
-    position: relative;
-    width: 1117px;
-}
 
-.footerBox .footer-UI {
-    height: 85px;
+.footer-UI {
+    height: 2.5rem;
     left: 0;
-    position: fixed;
-    top: 0;
-    width: 1121px;
+    position: absolute;
+    bottom: 10px;
+    width: 100vw;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
 }
 
-.footerBox .element-tag {
+.footer-UI .element-tag {
     color: #09132e;
     font-family: "Rubik-LightItalic", Helvetica;
     font-size: 14px;
     font-style: italic;
     font-weight: 300;
-    left: 421px;
     letter-spacing: 0;
     line-height: normal;
     opacity: 0.65;
     position: absolute;
     text-align: center;
-    top: 68px;
+    top: 55px;
 }
 
-.footerBox .contact-us {
-    height: 41px;
-    left: 897px;
-    position: absolute;
+.contact-us {
     top: 0;
-    width: 220px;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
 }
 
-.footerBox .overlap-group {
-    height: 17px;
-    position: relative;
-    top: 10px;
-}
-
-.footerBox .group {
-    height: 7px;
-    left: 0;
-    position: absolute;
-    top: 10px;
-    width: 220px;
-}
-
-.footerBox .email {
+.email, .phone {
     color: #09132e;
     font-family: "Rubik-LightItalic", Helvetica;
     font-size: 14px;
     font-style: italic;
     font-weight: 300;
-    left: 55px;
     letter-spacing: 0;
     line-height: normal;
     opacity: 0.7;
-    position: absolute;
-    top: 0;
+
 }
 
-.footerBox .DIGNITY {
+.footer-UI .DIGNITY {
     color: #4f9dd5;
     font-family: "Inter-Bold", Helvetica;
     font-size: 24px;
@@ -691,10 +684,10 @@ button {
     position: absolute;
     top: 0;
     white-space: nowrap;
-    width: 171px;
+    width: 25vw;
 }
 
-.footerBox .divider {
+.footer-UI .divider {
     background-color: #09132e;
     border: 1px solid;
     border-color: #979797;
@@ -703,7 +696,7 @@ button {
     opacity: 0.2;
     position: absolute;
     top: 46px;
-    width: 1075px;
+    width: 100vw;
 }
 
 /* Map page */

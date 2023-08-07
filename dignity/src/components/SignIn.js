@@ -66,7 +66,7 @@ export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, s
     
         setLoggedIn(true);
         onClose();
-        navigate('/HomePage');
+        navigate('/');
     };
 
     const handleSubmit = (event) => {
@@ -89,7 +89,7 @@ export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, s
 
                 setLoggedIn(true);
                 onClose();
-                navigate('/HomePage');
+                navigate('/');
             } 
             else {
                 setError(true);
@@ -106,7 +106,7 @@ export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, s
 
             setLoggedIn(true);
             onClose();
-            navigate('/HomePage');
+            navigate('/');
         }
     };
 

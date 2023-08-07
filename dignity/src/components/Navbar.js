@@ -38,11 +38,11 @@ export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignI
                         <div className="Vector" style={{ width: 8, height: 20, left: 24, top: 14.01, position: 'absolute', border: '1px white solid' }}></div>
                     </div>
                 </div>
-                <div className="Dignity" style={{ color: 'white', fontSize: 24, fontWeight: '700', marginLeft: 10 }}>DIGNITY</div>
+                <div className="Dignity" style={{ color: 'white', fontSize: 24, fontWeight: '700', marginLeft: 10 }}><Link to={'/'}>DIGNITY</Link></div>
             </div>
             <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 30, color: 'white', fontSize: 20, fontWeight: '700' }}>
                 <div className={selectedPage === 'HomePage' ? 'active' : ''} onClick={() => handleOptionClick('HomePage')}>
-                    <Link to={'/HomePage'}>Home</Link>
+                    <Link to={'/'}>Home</Link>
                 </div>
                 <div className={selectedPage === 'Profile' ? 'active' : ''} onClick={() => handleOptionClick('Profile')}>
                     <Link to={'/Profile'}>Profile</Link>

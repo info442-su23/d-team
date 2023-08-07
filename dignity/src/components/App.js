@@ -46,9 +46,9 @@ const App = () => {
     return (
         <div className="App">
             <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} showSignIn={showSignIn} setShowSignIn={setShowSignIn} users={users} setUsers={setUsers} onLoginSuccess={handleLoginSuccess} />
-            <div>
+            <div className="content-wrapper">
                 <Routes>
-                    <Route path="/HomePage" element={<HomePage />} />
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/Profile" element={<Profile loggedIn={loggedIn} username={username} email={email} password={password} isWaiverFormComplete={isWaiverFormComplete}setIsWaiverFormComplete={setIsWaiverFormComplete} handleWaiverFormComplete={handleWaiverFormComplete} />} />
                     <Route path="/Map" element={isLoaded ? <Map loggedIn={loggedIn} setLoggedIn={setLoggedIn}/> : null} />
                     <Route path="/Creator" element={<Creator />} />
