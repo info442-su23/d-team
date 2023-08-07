@@ -12,12 +12,10 @@ export const MapPage = () => {
                     Opportunities You’d Like To Attend.
                 </p>
                 <div className="overlap-group">
-                    <img className="map-pin" alt="Map pin" src="map-pin.png" />
-                    <img className="img" alt="Map pin" src="image.png" />
-                    <img className="map-pin-2" alt="Map pin" src="map-pin-2.png" />
-                    <div className="overlap">
-                        <img className="circle" alt="Circle" src="circle.svg" />
-                    </div>
+                    <img className="map-pin" alt="Map pin" src="src/imgs/map-pin.png" />
+                    <img className="img" alt="Map pin" src="src/imgs/map-pin-2.png" />
+                    <img className="map-pin-2" alt="Map pin" src="src/imgs/map-pin-3.png" />
+                    <img className="map-pin-3" alt="Map pin" src="src/imgs/map-pin-4.png" />
                     <div className="text-wrapper-2">Food Banks</div>
                     <div className="text-wrapper-3">Other</div>
                     <div className="text-wrapper-4">Donations</div>

@@ -7,6 +7,7 @@ import Profile from "./Profile";
 import Map from "./Map";
 import Creator from "./Creator";
 import { useLoadScript } from "@react-google-maps/api";
+import Footer from "./Footer";
 
 const App = () => {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -53,6 +54,7 @@ const App = () => {
                     <Route path="/Creator" element={<Creator />} />
                 </Routes>
             </div>
+            <Footer />
         </div>
     );
 };
