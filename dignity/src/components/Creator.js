@@ -3,6 +3,7 @@ import React from 'react';
 export default function Creator() {
     return (
         <div className="creator-content">
+            <img className="image" alt="Image" src="imgs/HomePageHeader.jpeg" />
             <h1 className="creator-header">Creator Form</h1>
             <p className="creator-desc">
                 Do you work for a nonprofit and want to share a volunteer opportunity on our page? Fill out the form below and volunteers will be able to sign up directly from the volunteer map!
