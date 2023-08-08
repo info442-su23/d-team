@@ -23,7 +23,7 @@ export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignI
     const handleLogout = () => {
         localStorage.removeItem('userToken');
         setLoggedIn(false);
-        navigate('/HomePage');
+        navigate('/');
     };
 
     return (
