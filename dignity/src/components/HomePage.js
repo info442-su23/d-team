@@ -6,7 +6,7 @@ export default function HomePage() {
         <div className="home">
             <div className="overlap-group-wrapper">
                 <div className="overlap-group">
-                    <img className="image" alt="Image" src="imgs/HomePageHeader.jpeg" />
+                    <img className="image" alt="Header" src="imgs/HomePageHeader.jpeg" />
                     <h1 className="element-people-in">
                         <span className="text-wrapper">53,500</span>
                         <span className="span"> People in King County experienced homelessness in 2022...</span>
