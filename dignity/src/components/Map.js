@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GoogleMap, InfoWindowF, MarkerF } from '@react-google-maps/api';
-import { useNavigate } from 'react-router-dom';
 //import Geocode from "react-geocode";
 //import useGoogleSheetsData from "../index";
-import SignIn from './SignIn';
+import useGoogleSheetsData from "..";
 
 const center = {
     lat: 47.604232774105725, 
@@ -16,29 +15,13 @@ const EXAMPLE_MARKERS = [
   {id: 2, location:"University District Food Bank", center:{lat: 47.58712669696925, lng: -122.32873333900736}, volunteers: 16} 
 ];
 
-export function Map({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, setUsers, onLoginSuccess }) {
-  const navigate = useNavigate();
-  const [selectedPage, setSelectedPage] = useState("Home");
-  
-  const handleOptionClick = (page) => {
-      setSelectedPage(page);
-  };
+export function Map({ loggedIn, selectedPage, showSignIn, setShowSignIn }) {
 
   const handleSignInClick = () => {
       setShowSignIn(true);
       console.log(showSignIn);
   };
 
-  const handleSignInClose = () => {
-      setShowSignIn(false);
-      console.log(showSignIn);
-  };
-
-  const handleLogout = () => {
-      localStorage.removeItem('userToken');
-      setLoggedIn(false);
-      navigate('/HomePage');
-  };
   //setLoggedIn(true);
 
   const [activeMarker, setActiveMarker] = useState(null);
@@ -66,7 +49,9 @@ export function Map({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, s
 
   return (
     <GoogleMap
-      onLoad={handleOnLoad}
+      //onLoad={handleOnLoad}
+      zoom={12}
+      center={center}
       onClick={() => setActiveMarker(null)}
       //onClick={() => handleFilter("food".toLowerCase())}
       mapContainerStyle={{ width: "50vw", height: "50vh" }}
@@ -93,16 +78,14 @@ export function Map({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, s
               </section>
             ) : (
               <section>
-                <btn onClick={handleSignInClick} className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}>Log In</btn>
                 <div>You need to sign in to volunteer!</div>
+                <button onClick={handleSignInClick} className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}>Log In</button>
               </section>
-        
             )}
             </InfoWindowF>
           ) : null}
         </MarkerF>
       ))}
-      {showSignIn && <SignIn onClose={handleSignInClose} setLoggedIn={setLoggedIn} users={users} setUsers={setUsers} onLoginSuccess={onLoginSuccess} />}
 
     </GoogleMap>
   );
