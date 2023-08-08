@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GoogleMap, InfoWindowF, MarkerF } from '@react-google-maps/api';
 //import Geocode from "react-geocode";
 //import useGoogleSheetsData from "../index";
-import useGoogleSheetsData from "..";
+//import useGoogleSheetsData from "..";
 
 const center = {
     lat: 47.604232774105725, 
@@ -26,7 +26,9 @@ export function Map({ loggedIn, selectedPage, showSignIn, setShowSignIn }) {
 
   const [activeMarker, setActiveMarker] = useState(null);
 
-  const [markers, setMarkers] = useState(EXAMPLE_MARKERS);
+  //const [markers, setMarkers] = useState(EXAMPLE_MARKERS);
+
+  const markers = EXAMPLE_MARKERS;
 
   const handleActiveMarker = (marker) => {
     if (marker === activeMarker) {
@@ -35,17 +37,14 @@ export function Map({ loggedIn, selectedPage, showSignIn, setShowSignIn }) {
     setActiveMarker(marker);
   };
 
-  const handleOnLoad = (map) => {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-  };
 
-  const handleFilter = (search) => {
+
+  /*const handleFilter = (search) => {
     console.log(markers);
     let filteredMarkers= markers.filter(marker => marker.location.toLowerCase().includes(search));
     console.log(filteredMarkers);
     setMarkers(filteredMarkers);
-  }
+  }*/
 
   return (
     <GoogleMap

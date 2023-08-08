@@ -9,7 +9,7 @@ export default function HomePage() {
                 <div className="overlap-group">
 
                     <div className='intro-section'>
-                        <img className="image" alt="Image" src="imgs/HomePageHeader.jpeg" />
+                        <img className="image" alt="Header" src="imgs/HomePageHeader.jpeg" />
                         <div className="element-people-in">
                             <h1>
                                 <span className="bold-number">53,500</span>
