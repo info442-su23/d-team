@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { GoogleMap, InfoWindowF, MarkerF } from '@react-google-maps/api';
+import { useNavigate } from 'react-router-dom';
 //import Geocode from "react-geocode";
 //import useGoogleSheetsData from "../index";
 import SignIn from './SignIn';
@@ -15,8 +16,29 @@ const EXAMPLE_MARKERS = [
   {id: 2, location:"University District Food Bank", center:{lat: 47.58712669696925, lng: -122.32873333900736}, volunteers: 16} 
 ];
 
-export function Map({ loggedIn, setLoggedIn, users, setUsers, onLoginSuccess, selectedPage, handleSignInClick, handleSignInClose, showSignIn, setShowSignIn }) {
+export function Map({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, setUsers, onLoginSuccess }) {
+  const navigate = useNavigate();
+  const [selectedPage, setSelectedPage] = useState("Home");
+  
+  const handleOptionClick = (page) => {
+      setSelectedPage(page);
+  };
 
+  const handleSignInClick = () => {
+      setShowSignIn(true);
+      console.log(showSignIn);
+  };
+
+  const handleSignInClose = () => {
+      setShowSignIn(false);
+      console.log(showSignIn);
+  };
+
+  const handleLogout = () => {
+      localStorage.removeItem('userToken');
+      setLoggedIn(false);
+      navigate('/HomePage');
+  };
   //setLoggedIn(true);
 
   const [activeMarker, setActiveMarker] = useState(null);
