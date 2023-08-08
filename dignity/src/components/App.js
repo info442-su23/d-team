@@ -1,6 +1,6 @@
 import "../App.css";
 import React, { useState, useEffect }  from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from "./Navbar";
 import HomePage from "./HomePage"
 import Profile from "./Profile";
@@ -45,16 +45,51 @@ const App = () => {
 
     return (
         <div className="App">
-            <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} showSignIn={showSignIn} setShowSignIn={setShowSignIn} users={users} setUsers={setUsers} onLoginSuccess={handleLoginSuccess} />
-            <div className="content-wrapper">
+            <Navbar 
+              loggedIn={loggedIn} 
+              setLoggedIn={setLoggedIn} 
+              showSignIn={showSignIn} 
+              setShowSignIn={setShowSignIn} 
+              users={users} setUsers={setUsers} 
+              onLoginSuccess={handleLoginSuccess} 
+              selectedPage={selectedPage} 
+              setSelectedPage={setSelectedPage} 
+              handleSignInClick={handleSignInClick} 
+              handleSigninClose={handleSignInClose} 
+              handleOptionClick={handleOptionClick} 
+              handleLogout={handleLogout}      
+            />
+            <div>
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/Profile" element={<Profile loggedIn={loggedIn} username={username} email={email} password={password} isWaiverFormComplete={isWaiverFormComplete}setIsWaiverFormComplete={setIsWaiverFormComplete} handleWaiverFormComplete={handleWaiverFormComplete} />} />
-                    <Route path="/Map" element={isLoaded ? <Map loggedIn={loggedIn} setLoggedIn={setLoggedIn}/> : null} />
+                    <Route path="/HomePage" element={<HomePage />} />
+                    <Route path="/Profile" element={
+                      <Profile 
+                        loggedIn={loggedIn} 
+                        username={username} 
+                        email={email} 
+                        password={password} 
+                        isWaiverFormComplete={isWaiverFormComplete}
+                        setIsWaiverFormComplete={setIsWaiverFormComplete} 
+                        handleWaiverFormComplete={handleWaiverFormComplete} 
+
+                      />
+                    } />
+                    <Route path="/Map" element={isLoaded ?
+                      <Map
+                        loggedIn={loggedIn} 
+                        setLoggedIn={setLoggedIn} 
+                        showSignIn={showSignIn} 
+                        setShowSignIn={setShowSignIn} 
+                        users={users} setUsers={setUsers} 
+                        onLoginSuccess={handleLoginSuccess} 
+                        selectedPage={selectedPage} 
+                        setSelectedPage={setSelectedPage} 
+                        handleSignInClick={handleSignInClick} 
+                        handleSigninClose={handleSignInClose}
+                      /> : null} />
                     <Route path="/Creator" element={<Creator />} />
                 </Routes>
             </div>
-            <Footer />
         </div>
     );
 };

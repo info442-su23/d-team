@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, setUsers }) {
+
+export default function SignIn ({ handleSignInClose, setLoggedIn, users, setUsers }) {
+
     const navigate = useNavigate();
     const [signInMode, setSignInMode] = useState(true);
     const [error, setError] = useState(false);
@@ -25,10 +27,12 @@ export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, s
     }, [users]);
 
     const toggleMode = () => {
+        console.log(signInMode);
         setSignInMode(prevMode => !prevMode);
         setError(false);
         setErrorMessage('');
     };
+    
 
     const handleForgotPasswordClick = () => {
         setShowForgotPassword(true);
@@ -65,15 +69,18 @@ export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, s
         setUsers(prevUsers => [...prevUsers]);
     
         setLoggedIn(true);
-        onClose();
-        navigate('/');
+
+        handleSignInClose();
+
+        navigate('/Navbar');
+
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const username = event.target.username.value;
         const password = event.target.password.value;
-        const email = signInMode ? null : event.target.email.value; 
+        const email = event.target.email.value;
 
         if (!signInMode && (!username || !password || !email)) {
             setError(true);
@@ -88,8 +95,11 @@ export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, s
                 onLoginSuccess(username, user.email, user.password);
 
                 setLoggedIn(true);
-                onClose();
-                navigate('/');
+
+                handleSignInClose();
+
+                navigate('/Navbar');
+
             } 
             else {
                 setError(true);
@@ -105,8 +115,11 @@ export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, s
             onLoginSuccess(username, email, password);
 
             setLoggedIn(true);
-            onClose();
+
+            handleSignInClose();
+
             navigate('/');
+
         }
     };
 
@@ -181,7 +194,7 @@ export default function SignIn ({ onClose, onLoginSuccess, setLoggedIn, users, s
                             </div>
                         </form>
                     </div>
-                    <button className="close-button" onClick={onClose} style={{ marginTop: '8px' }}>Close</button>
+                    <button className="close-button" onClick={handleSignInClose} style={{ marginTop: '8px' }}>Close</button>
                 </>
                 )}
             </div>
