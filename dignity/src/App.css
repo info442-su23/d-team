@@ -6,6 +6,7 @@
 .content-wrapper {
     padding-bottom: 2.5rem;
 }
+
 /* Map */
 .Map {
     height: 100vh;
@@ -192,26 +193,41 @@ button {
 /* HomePage */
 .home {
     background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 100vw;
 }
 
 .home .overlap-group-wrapper {
     background-color: #ffffff;
     border: 1px none;
-    height: 2592px;
+    height: 155rem;
     width: 100vw;
 }
 
 .home .overlap-group {
-    height: 2358px;
     position: relative;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+
 }
 
-.home .image {
-    height: 588px;
+.home .intro-section {
+    width: 70vw;
+    height: 28rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 15vw;
+    margin-right: 10vw;
+    order: 1;
+
+}
+
+.intro-section .image {
+    height: 38rem;
     left: 0;
     object-fit: cover;
     position: absolute;
@@ -219,199 +235,141 @@ button {
     width: 100vw;
 }
 
-.home .element-people-in {
+.intro-section .element-people-in {
     color: transparent;
     font-family: "Inter-ExtraBold", Helvetica;
-    font-size: 48px;
+    font-size: 1.5rem;
     font-weight: 400;
-    left: 276px;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
-    top: 216px;
-    width: 728px;
+    position: relative;
 }
 
-.home .text-wrapper {
+.intro-section .bold-number {
     color: #709cde;
     font-weight: 800;
 }
 
-.home .span {
+.intro-section .span {
     color: #ffffff;
     font-family: "Inter-Bold", Helvetica;
     font-weight: 700;
 }
 
-.home .washington-s {
+.intro-section .washington-s {
     color: #ffffff;
     font-family: "Inter-Italic", Helvetica;
-    font-size: 14px;
+    font-size: 1rem;
     font-style: italic;
     font-weight: 400;
-    left: 276px;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
-    top: 389px;
-    white-space: nowrap;
-    width: 468px;
+    position: relative;
 }
 
-.home .div {
+.home .mission-section {
     background-color: #31668c;
-    height: 590px;
+    color: #ffffff;
+    display: flex;
+    height: 38rem;
     left: 0;
     position: absolute;
-    top: 584px;
+    top: 38rem;
     width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    order: 2
 }
 
-.home .rectangle-2 {
-    background-color: #ffffff;
-    height: 590px;
-    left: 0;
-    position: absolute;
-    top: 1188px;
-    width: 100vw;
+.mission-section .title {
+    color: #ffffff;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-align: center;
 }
 
-.home .dignity-empowering {
+.mission-section .dignity-empowering {
     color: #ffffff;
     font-family: "Rubik-SemiBold", Helvetica;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;
-    left: 403px;
-    letter-spacing: 0;
     line-height: normal;
-    position: absolute;
     text-align: center;
-    top: 716px;
-    width: 492px;
+    width: 30rem;
 }
 
-.home .text-wrapper-2 {
+.mission-section .text-wrapper-2 {
     font-weight: 600;
 }
 
-.home .text-wrapper-3 {
+.mission-section .text-wrapper-3 {
     font-family: "Rubik-Light", Helvetica;
     font-weight: 300;
 }
 
-.home .title {
-    height: 46px;
-    left: 252px;
+.home .volunteer-section {
+    background-color: #ffffff;
     position: absolute;
-    top: 636px;
-    width: 793px;
+    top: 80rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    order: 3;
 }
 
-.home .line {
-    height: 2px;
-    left: 39px;
-    object-fit: cover;
-    position: absolute;
-    top: 21px;
-    width: 206px;
-}
-
-.home .img {
-    height: 2px;
-    left: 535px;
-    object-fit: cover;
-    position: absolute;
-    top: 22px;
-    width: 206px;
-}
-
-.home .text-wrapper-4 {
-    color: #ffffff;
-    font-family: "Inter-SemiBold", Helvetica;
-    font-size: 40px;
-    font-weight: 600;
-    left: 510px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 635px;
-    width: 357px;
-}
-
-.home .text-wrapper-5 {
+.volunteer-section .text-wrapper-5 {
     color: #31668c;
     font-family: "Inter-SemiBold", Helvetica;
-    font-size: 40px;
+    font-size: 3rem;
     font-weight: 600;
     left: 554px;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
     top: 1250px;
     width: 357px;
+    text-align: center;
 }
 
-.home .title-2 {
-    height: 46px;
-    left: 253px;
-    position: absolute;
-    top: 1254px;
-    width: 793px;
-}
 
-.home .line-2 {
-    height: 2px;
-    left: 79px;
-    object-fit: cover;
-    position: absolute;
-    top: 21px;
-    width: 206px;
-}
-
-.home .line-3 {
-    height: 2px;
-    left: 507px;
-    object-fit: cover;
-    position: absolute;
-    top: 22px;
-    width: 206px;
-}
-
-.home .check-out-volunteer {
+.volunteer-section .check-out-volunteer {
     color: #31668c;
     font-family: "Rubik-Light", Helvetica;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 300;
     left: 351px;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
     text-align: center;
     top: 1345px;
     width: 633px;
 }
 
-.home .rectangle-4 {
-    left: 468px !important;
-    position: absolute !important;
-    top: 1470px !important;
-}
-
-.home .text-wrapper-6 {
+.volunteer-section .explore-map {
+    background-color: #DCB48F;
+    height: 3rem;
+    width: 20rem;
     color: #ffffff;
     font-family: "Rubik-SemiBold", Helvetica;
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: 600;
-    left: 562px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
     text-align: center;
-    top: 1497px;
-    white-space: nowrap;
+    vertical-align: middle;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
 
-.home .rectangle-3 {
+.explore-map a {
+    text-decoration: none;
+    color: white;
+}
+
+.home .about-section {
     background-color: #31668c;
     height: 40rem;
     display: flex;
@@ -419,7 +377,7 @@ button {
     align-content: center;
     align-items: center;
     position: absolute;
-    top: 1768px;
+    top: 110rem;
     width: 100vw;
     flex-wrap: wrap;
     padding-top: 2.5rem;
@@ -427,17 +385,12 @@ button {
     order: 4;
 }
 
-.home .text-wrapper-7 {
+.about-section .about-us {
     color: #ffffff;
     font-family: "Inter-SemiBold", Helvetica;
     font-size: 2rem;
     font-weight: 600;
-    left: 549px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 1817px;
-    width: 357px;
+    align-self: center;
 }
 
 .about-section .card-container {
@@ -448,158 +401,35 @@ button {
     order: 5
 }
 
-.home .line-4 {
-    height: 2px;
-    left: 520px;
-    object-fit: cover;
-    position: absolute;
-    top: 22px;
-    width: 206px;
-}
-
-.home .rectangle-5 {
-    background-color: #d9d9d9;
-    height: 242px;
-    left: 170px;
-    position: absolute;
-    top: 1949px;
-    width: 192px;
+.about-section .card {
+    padding: 1rem;
 }
 
 .about-section .card-img {
     max-height: 15rem;
 }
 
-.home .element {
-    height: 242px;
-    left: 643px;
-    object-fit: cover;
-    position: absolute;
-    top: 1949px;
-    width: 198px;
-}
-
-.home .sydney-morales {
+.about-section .card-name{
     color: #ffffff;
     font-family: "Inter-Bold", Helvetica;
-    font-size: 18px;
+    font-size: 1.5rem;
     font-weight: 700;
     left: 185px;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
     top: 2208px;
     width: 165px;
 }
 
-.home .text-wrapper-8 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 18px;
-    font-weight: 700;
-    left: 419px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 2208px;
-    width: 183px;
-}
-
-.home .text-wrapper-9 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 18px;
-    font-weight: 700;
-    left: 692px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 2208px;
-    width: 183px;
-}
-
-.home .project-manager {
+.about-section .card-title {
     color: #ffffff;
     font-family: "Inter-Italic", Helvetica;
-    font-size: 18px;
+    font-size: 1.3rem;
     font-style: italic;
     font-weight: 400;
     left: 193px;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
-    top: 2236px;
-}
-
-.home .ddff-d {
-    height: 244px;
-    left: 170px;
-    object-fit: cover;
-    position: absolute;
-    top: 1947px;
-    width: 192px;
-}
-
-.home .element-fabb-a {
-    height: 242px;
-    left: 895px;
-    object-fit: cover;
-    position: absolute;
-    top: 1949px;
-    width: 192px;
-}
-
-.home .text-wrapper-10 {
-    color: #ffffff;
-    font-family: "Inter-Italic", Helvetica;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: 400;
-    left: 428px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 2236px;
-}
-
-.home .text-wrapper-11 {
-    color: #ffffff;
-    font-family: "Inter-Italic", Helvetica;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: 400;
-    left: 692px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 2236px;
-}
-
-.home .text-wrapper-12 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 18px;
-    font-weight: 700;
-    left: 942px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 2208px;
-    width: 183px;
-}
-
-.home .text-wrapper-13 {
-    color: #ffffff;
-    font-family: "Inter-Italic", Helvetica;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: 400;
-    left: 947px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
     top: 2236px;
 }
 
@@ -608,7 +438,6 @@ button {
 
 .footer-UI {
     height: 2.5rem;
-    left: 0;
     position: absolute;
     bottom: 10px;
     width: 100vw;
@@ -632,11 +461,11 @@ button {
 
 .contact-us {
     position: absolute;
-    width: 8vw;
     right: 0;
+    padding: 1rem;
     color: #09132e;
     font-family: "Rubik-LightItalic", Helvetica;
-    font-size: 14px;
+    font-size: 1rem;
     font-style: italic;
     font-weight: 300;
     letter-spacing: 0;
@@ -647,7 +476,7 @@ button {
 .footer-UI .DIGNITY {
     color: #4f9dd5;
     font-family: "Inter-Bold", Helvetica;
-    font-size: 24px;
+    font-size: 1.3rem;
     font-weight: 700;
     left: 0;
     letter-spacing: 0;
@@ -862,7 +691,7 @@ button {
     text-align: center;
     top: 268px;
     width: 181px;
-    }
+}
 
 .mapPage .help-at-food-banks {
     color: #709cde;
@@ -931,7 +760,7 @@ button {
     position: absolute;
     top: 221px;
     width: 445px;
-    }
+}
 
 .profile .email {
     color: #4f9dd5;
@@ -1112,7 +941,7 @@ button {
     align-items: center;
     margin-bottom: 10px;
 }
-  
+
 .profile .form-group {
     flex: 1;
     margin-right: 10px;
@@ -1234,8 +1063,9 @@ button {
     .Dignity {
         font-size: 1.3rem;
     }
+
     .nav-links {
-        display: inline-flex;
+        display: flex;
         gap: 3rem;
         font-size: 1.3rem;
     }
