@@ -62,11 +62,11 @@ This page will always contain:
 
 This pop-up will always contain:
 - O1d1: On hover, popup displays basic opportunity info (location, opportunity type, time start, volunteers needed) (Incomplete)
-- O1d2: On click, popup expands to display more detailed info (opportunity description, directions link to google maps) (Incomplete)
+- O1d2: On click, popup expands to display more detailed info (opportunity description, directions link to google maps) (Complete)
 
 If the user is not logged in:
 - O1d3: The expanded popup displays a button with a prompt to log in order to sign up for the opportunity (Complete #87)
-- O1d4: When the login button is clicked, redirects to the profile page (Incomplete)
+- O1d4: When the login button is clicked, redirects to the profile page (Complete)
 
 If the user is logged in:
 - O1d5: The expanded popup displays a sign up / cancel button (Incomplete)
