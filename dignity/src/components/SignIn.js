@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function SignIn ({ handleSignInClose, setLoggedIn, users, setUsers }) {
+export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn, users, setUsers }) {
 
     const navigate = useNavigate();
     const [signInMode, setSignInMode] = useState(true);
@@ -80,7 +80,7 @@ export default function SignIn ({ handleSignInClose, setLoggedIn, users, setUser
         event.preventDefault();
         const username = event.target.username.value;
         const password = event.target.password.value;
-        const email = event.target.email.value;
+        const email = signInMode ? null : event.target.email.value; 
 
         if (!signInMode && (!username || !password || !email)) {
             setError(true);
