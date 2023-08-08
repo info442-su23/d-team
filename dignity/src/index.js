@@ -37,6 +37,7 @@ const useGoogleSheetsData = () => {
         });
       }).then(response => {
         const data = response.result.values;
+        console.log(data);
         // Process the data as needed and update your React state
       }).catch(error => {
         console.error('Error fetching data:', error);
