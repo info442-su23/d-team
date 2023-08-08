@@ -32,7 +32,7 @@
 }
 
 .nav-links {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     padding: 1rem;
     display: flex;
@@ -163,7 +163,9 @@ button {
 }
 
 .creator-content img {
-    max-width: 100vw;
+    object-fit: cover;
+    height: 25vh;
+    width: 100vw;
 }
 
 .creator-header {
@@ -220,6 +222,7 @@ button {
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 10vh;
     margin-left: 15vw;
     margin-right: 10vw;
     order: 1;
@@ -314,7 +317,7 @@ button {
     background-color: #ffffff;
     position: absolute;
     top: 80rem;
-    height: 20rem;
+    height: 18rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -346,20 +349,20 @@ button {
     letter-spacing: 0;
     line-height: normal;
     text-align: center;
+    white-space: wrap;
     top: 1345px;
     width: 633px;
 }
 
 .volunteer-section .explore-map {
     background-color: #DCB48F;
-    height: 3rem;
-    width: 20rem;
+    height: 3.5rem;
+    width: 18rem;
     color: #ffffff;
     font-family: "Rubik-SemiBold", Helvetica;
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
-    vertical-align: middle;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
@@ -367,6 +370,8 @@ button {
 .explore-map a {
     text-decoration: none;
     color: white;
+    vertical-align: middle;
+    line-height: 3rem;
 }
 
 .home .about-section {
@@ -379,9 +384,8 @@ button {
     position: absolute;
     top: 110rem;
     width: 100vw;
-    flex-wrap: wrap;
     padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 5rem;
     order: 4;
 }
 
@@ -395,6 +399,7 @@ button {
 
 .about-section .card-container {
     display: flex;
+    padding-top: 2rem;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
@@ -406,13 +411,13 @@ button {
 }
 
 .about-section .card-img {
-    max-height: 15rem;
+    min-height: 8rem;
 }
 
 .about-section .card-name{
     color: #ffffff;
     font-family: "Inter-Bold", Helvetica;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     left: 185px;
     letter-spacing: 0;
@@ -424,7 +429,7 @@ button {
 .about-section .card-title {
     color: #ffffff;
     font-family: "Inter-Italic", Helvetica;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-style: italic;
     font-weight: 400;
     left: 193px;
@@ -439,7 +444,7 @@ button {
 .footer-UI {
     height: 2.5rem;
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     width: 100vw;
 }
 
@@ -454,12 +459,13 @@ button {
     opacity: 0.65;
     position: absolute;
     text-align: center;
-    top: 55px;
+    top: 3rem;
     margin: 0.5rem;
-    width: 99vw;
+    padding: 1rem;
+    width: 95vw;
 }
 
-.contact-us {
+.contact {
     position: absolute;
     right: 0;
     padding: 1rem;
@@ -1038,19 +1044,32 @@ button {
 
     /* Home */
     .about-section {
-        height: 38rem;
+        max-height: 32rem;
+        flex-direction: column;
     }
     
     .about-section .card-container {
         display: flex;
         justify-content: space-around;
-        align-content: center;
-        flex-wrap: wrap;
-        order: 5
     }
 
     .about-section .about-us {
         font-size: 3rem;
+    }
+
+    .about-section .card {
+        max-width: 12rem;
+        padding-top: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .about-section .card-name{
+        font-size: 1.5rem;
+    }
+    
+    .about-section .card-title {
+        font-size: 1.3rem;
     }
 
     /* Profile */
