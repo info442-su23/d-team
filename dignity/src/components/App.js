@@ -1,7 +1,6 @@
 import "../App.css";
-import { Routes, Route } from 'react-router-dom';
-import React, { useState, useEffect }  from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect }  from 'react';
 import Navbar from "./Navbar";
 import HomePage from "./HomePage"
 import Profile from "./Profile";
@@ -18,6 +17,28 @@ const App = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isWaiverFormComplete, setIsWaiverFormComplete] = useState(false);
+    const navigate = useNavigate();
+    const [selectedPage, setSelectedPage] = useState("Home");
+    
+    const handleOptionClick = (page) => {
+        setSelectedPage(page);
+    };
+
+    const handleSignInClick = () => {
+        setShowSignIn(true);
+        console.log(showSignIn);
+    };
+
+    const handleSignInClose = () => {
+        setShowSignIn(false);
+        console.log(showSignIn);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('userToken');
+        setLoggedIn(false);
+        navigate('/HomePage');
+    };
 
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0" 
