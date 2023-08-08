@@ -7,6 +7,7 @@ export default function HomePage() {
         <div className="home">
             <div className="overlap-group-wrapper">
                 <div className="overlap-group">
+
                     <div className='intro-section'>
                         <img className="image" alt="Image" src="imgs/HomePageHeader.jpeg" />
                         <div className="element-people-in">

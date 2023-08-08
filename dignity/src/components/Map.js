@@ -20,7 +20,7 @@ const EXAMPLE_MARKERS = [
 
 export function Map({ loggedIn, selectedPage, showSignIn, setShowSignIn }) {
   const [activeMarker, setActiveMarker] = useState(null);
-  const [markers, setMarkers] = useState();
+  const [markers, setMarkers] = useState(EXAMPLE_MARKERS);
   const handleSignInClick = () => {
       setShowSignIn(true);
       console.log(showSignIn);
@@ -31,8 +31,6 @@ export function Map({ loggedIn, selectedPage, showSignIn, setShowSignIn }) {
     }
     setActiveMarker(marker);
   };
-
-  setMarkers(EXAMPLE_MARKERS);
 
   /* Issue #50; Complete but bugged due to 'Too many re-renders. React limits the number of renders to prevent an infinite loop'
   const GoogleSheets = () => {
@@ -50,12 +48,12 @@ export function Map({ loggedIn, selectedPage, showSignIn, setShowSignIn }) {
 	GoogleSheets();
   */
 
-  /*const handleFilter = (search) => {
+  const handleFilter = (search) => {
     console.log(markers);
     let filteredMarkers= markers.filter(marker => marker.location.toLowerCase().includes(search));
     console.log(filteredMarkers);
     setMarkers(filteredMarkers);
-  }*/
+  }
   
   return (
     //Issue 
