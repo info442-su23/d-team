@@ -72,7 +72,7 @@ export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn
 
         handleSignInClose();
 
-        navigate('/Navbar');
+        navigate('/HomePage');
 
     };
 
@@ -98,7 +98,7 @@ export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn
 
                 handleSignInClose();
 
-                navigate('/Navbar');
+                navigate('/HomePage');
 
             } 
             else {
@@ -118,7 +118,7 @@ export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn
 
             handleSignInClose();
 
-            navigate('/');
+            navigate('/HomePage');
 
         }
     };

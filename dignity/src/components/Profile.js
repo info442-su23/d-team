@@ -98,6 +98,22 @@ export default function Profile({ loggedIn, username, password, email, isWaiverF
         setErrorMessage('');
     }
 
+    const handleNameKeyDown = (e) => {
+        const keyCode = e.which || e.keyCode;
+        const inputValue = e.key;
+        if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ-\s']$/.test(inputValue) && keyCode !== 8 && keyCode !== 46 && keyCode !== 9 && keyCode !== 20 && !e.shiftKey) {
+            e.preventDefault();
+        }
+    };
+
+    const handleSSNKeyDown = (e) => {
+        const keyCode = e.which || e.keyCode;
+        const currentValue = e.target.value;
+        if ((keyCode < 48 || keyCode > 57 || currentValue.length >= 9) && keyCode !== 8 && keyCode !== 46 && keyCode !== 9 && keyCode !== 20 && !e.shiftKey) {
+            e.preventDefault();
+        }
+    };
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
     
@@ -114,6 +130,12 @@ export default function Profile({ loggedIn, username, password, email, isWaiverF
         ) {
             setError(true);
             setErrorMessage('Please fill in all required fields.');
+            return;
+        }
+
+        if (!/^\d{9}$/.test(waiverFormData.ssn)) {
+            setError(true);
+            setErrorMessage('Invalid input format for SSN.');
             return;
         }
     
@@ -267,15 +289,15 @@ export default function Profile({ loggedIn, username, password, email, isWaiverF
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="firstName">First Name</label>
-                                    <input type="text" id="firstName" name="firstName" value={waiverFormData.firstName} onChange={handleInputChange} />
+                                    <input type="text" id="firstName" name="firstName" value={waiverFormData.firstName} onChange={handleInputChange} onKeyDown={handleNameKeyDown} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="middleName">Middle Name</label>
-                                    <input type="text" id="middleName" name="middleName" value={waiverFormData.middleName} onChange={handleInputChange} />
+                                    <input type="text" id="middleName" name="middleName" value={waiverFormData.middleName} onChange={handleInputChange} onKeyDown={handleNameKeyDown} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="lastName">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" value={waiverFormData.lastName} onChange={handleInputChange} />
+                                    <input type="text" id="lastName" name="lastName" value={waiverFormData.lastName} onChange={handleInputChange} onKeyDown={handleNameKeyDown} />
                                 </div>
                             </div>
 
@@ -316,7 +338,7 @@ export default function Profile({ loggedIn, username, password, email, isWaiverF
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="ssn">Social Security No.</label>
-                                    <input type="text" id="ssn" name="ssn" value={waiverFormData.ssn} onChange={handleInputChange} />
+                                    <input type="text" id="ssn" name="ssn" value={waiverFormData.ssn} onChange={handleInputChange} onKeyDown={handleSSNKeyDown} />
                                 </div>
                             </div>
 
