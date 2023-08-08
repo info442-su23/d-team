@@ -651,14 +651,13 @@ button {
     position: absolute;
     text-align: center;
     top: 55px;
-    padding: 1rem;
-    width: 100vw;
+    margin: 0.5rem;
+    width: 99vw;
 }
 
 .contact-us {
     position: absolute;
-    width: 10vw;
-    padding: 1rem;
+    width: 8vw;
     right: 0;
     color: #09132e;
     font-family: "Rubik-LightItalic", Helvetica;
@@ -692,8 +691,8 @@ button {
     opacity: 0.2;
     position: absolute;
     top: 46px;
-    margin: 0.25rem;
-    width: 100vw;
+    margin: 0.5rem;
+    width: 99vw;
 }
 
 /* Map page */
