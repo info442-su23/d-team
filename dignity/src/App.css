@@ -186,7 +186,7 @@ button {
     margin: 0;
     border: 0;
     width: 75vw;
-    height: 75vh;
+    height: 100vh;
 }
 
 /* HomePage */
@@ -413,17 +413,24 @@ button {
 
 .home .rectangle-3 {
     background-color: #31668c;
-    height: 590px;
-    left: 0;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
     position: absolute;
     top: 1768px;
     width: 100vw;
+    flex-wrap: wrap;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    order: 4;
 }
 
 .home .text-wrapper-7 {
     color: #ffffff;
     font-family: "Inter-SemiBold", Helvetica;
-    font-size: 40px;
+    font-size: 2rem;
     font-weight: 600;
     left: 549px;
     letter-spacing: 0;
@@ -433,12 +440,12 @@ button {
     width: 357px;
 }
 
-.home .title-3 {
-    height: 46px;
-    left: 243px;
-    position: absolute;
-    top: 1817px;
-    width: 793px;
+.about-section .card-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    order: 5
 }
 
 .home .line-4 {
@@ -459,40 +466,8 @@ button {
     width: 192px;
 }
 
-.home .rectangle-6 {
-    background-color: #d9d9d9;
-    height: 242px;
-    left: 895px;
-    position: absolute;
-    top: 1949px;
-    width: 192px;
-}
-
-.home .rectangle-7 {
-    background-color: #d9d9d9;
-    height: 242px;
-    left: 649px;
-    position: absolute;
-    top: 1949px;
-    width: 192px;
-}
-
-.home .rectangle-8 {
-    background-color: #d9d9d9;
-    height: 242px;
-    left: 406px;
-    position: absolute;
-    top: 1949px;
-    width: 192px;
-}
-
-.home .crop-square {
-    height: 242px;
-    left: 405px;
-    object-fit: cover;
-    position: absolute;
-    top: 1949px;
-    width: 193px;
+.about-section .card-img {
+    max-height: 15rem;
 }
 
 .home .element {
@@ -929,9 +904,9 @@ button {
 .profile .div {
     background-color: #ffffff;
     border: 1px none;
-    height: 1280px;
+    height: 70rem;
     position: relative;
-    width: 1280px;
+    width: 100vw;
 }
 
 .profile .ellipse {
@@ -942,12 +917,13 @@ button {
     position: absolute;
     top: 195px;
     width: 314px;
+    
 }
 
 .profile .volunteer {
     color: #4f9dd5;
     font-family: "Inter-ExtraBold", Helvetica;
-    font-size: 36px;
+    font-size: 3rem;
     font-weight: 800;
     left: 598px;
     letter-spacing: 0;
@@ -1228,6 +1204,31 @@ button {
 @media (min-width: 50rem) {
 
     /* Map */
+
+
+    /* Home */
+    .about-section {
+        height: 38rem;
+    }
+    
+    .about-section .card-container {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        flex-wrap: wrap;
+        order: 5
+    }
+
+    .about-section .about-us {
+        font-size: 3rem;
+    }
+
+    /* Profile */
+    .profile .elipse {
+        border-radius: 140px/140.5px;
+        height: 50px;
+        width: 50px;
+    }
 
     /* Navigation */
     .Dignity {
