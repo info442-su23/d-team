@@ -1,13 +1,14 @@
 import React from "react";
-import "./style.css";
+import "../App.css";
 
-export const OnClick = () => {
+export function OnClick ({Organization_Name, Address, Date_Start, Time_Start, Time_End, Type, Volunteers, Details}) {
+  console.log(Organization_Name);
   return (
-    <div className="onClick">
+    <div className="onClick" >
       <div className="overlap-group-wrapper">
         <div className="overlap-group">
           <div className="overlap">
-            <h1 className="text-wrapper">Sacred Heart Shelter</h1>
+            <h1 className="text-wrapper">{Organization_Name}</h1>
           </div>
           <div className="div">
             <div className="circle-wrapper">
@@ -17,20 +18,20 @@ export const OnClick = () => {
               <p className="date-august">
                 <span className="span">Date: </span>
                 <span className="text-wrapper-2">
-                  August 30, 2023
+                  {Date_Start}
                   <br />
                   <br />
                 </span>
                 <span className="span">Time:</span>
                 <span className="text-wrapper-2">
                   {" "}
-                  12:30 - 3:30 pM
+                  {Time_Start} - {Time_End}
                   <br />
                   <br />
                 </span>
                 <span className="span">Volunteers Needed: </span>
                 <span className="text-wrapper-2">
-                  25
+                  {Volunteers}
                   <br />
                   <br />
                 </span>
@@ -39,11 +40,7 @@ export const OnClick = () => {
               </p>
               <div className="rectangle" />
               <p className="the-sacred-heart">
-                The Sacred Heart Shelter Is Looking For Volunteers Willing To Come Hand Out Food To The Local Homeless
-                Population During Our Weekly Food Drive. As A Volunteer You Will Come To The Shelter Before The Drive
-                Begins And Help Set Up For The Food Drive.after Set Up You Will Be Assigned A Station Where You Will Be
-                Responsible For Handing Out Food From. This Is A Great Opportunity To Help Your Community And Provide
-                Food For The Local Homeless Population.
+                {Details}}
               </p>
             </div>
           </div>
@@ -56,3 +53,4 @@ export const OnClick = () => {
     </div>
   );
 };
+

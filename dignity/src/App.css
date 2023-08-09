@@ -501,9 +501,10 @@ button {
 
 /* Map page */
 .mapPage {
+    align-items: center;
     background-color: #ffffff;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
 }
@@ -511,10 +512,11 @@ button {
 .mapPage .div {
     background-color: #ffffff;
     border: 1px none;
-    height: 1518px;
+    height: 1000px;
     overflow: hidden;
     position: relative;
     width: 1280px;
+    align-items: auto;
 }
 
 .mapPage .text-wrapper {
@@ -575,7 +577,7 @@ button {
     width: 101px;
 }
 
-.mapPage .img {
+.mapPage .map-pin-1 {
     height: 130px;
     left: 889px;
     position: absolute;
@@ -586,6 +588,14 @@ button {
 .mapPage .map-pin-2 {
     height: 130px;
     left: 642px;
+    position: absolute;
+    top: 59px;
+    width: 101px;
+}
+
+.mapPage .map-pin-3 {
+    height: 130px;
+    left: 395px;
     position: absolute;
     top: 59px;
     width: 101px;
