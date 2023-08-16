@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "../App.css";
 
 export const MapPage = () => {
     return (
@@ -13,7 +13,7 @@ export const MapPage = () => {
                 </p>
                 <div className="overlap-group">
                     <img className="map-pin" alt="Map pin" src="imgs/map-pin.png" />
-                    <img className="img" alt="Map pin" src="imgs/map-pin-2.png" />
+                    <img className="map-pin-1" alt="Map pin" src="imgs/map-pin-2.png" />
                     <img className="map-pin-2" alt="Map pin" src="imgs/map-pin-3.png" />
                     <img className="map-pin-3" alt="Map pin" src="imgs/map-pin-4.png" />
                     <div className="text-wrapper-2">Food Banks</div>
