@@ -82,10 +82,6 @@ const App = () => {
           locations.map((location, index) =>   
           ({
             id: index,
-            // steven: address to coordinates function; returns promise, need promise results, check console for full details
-            /*center: getCoords(location['Location Address']).then(function(result) {
-              location.center = result;
-            }),*/
             Address: location['Location Address'],
             Type: location['Select opportunity type'],
             Organization_Name: location['Organization Name'],
@@ -94,11 +90,9 @@ const App = () => {
             Virtual: location['Is this a virtual opportunity?'],
             Time_Start: location['Select start time'],
             Time_End: location['Select end time'],
-            // steven: not working, perhaps change the column name to something simpler?
-            Description: location['Please provide a description of this position\'s responsibilities and other useful details for volunteers']
+            Description: location['Please provide a description of this position\'s responsibilities and other useful details for volunteers.']
           }),
         )        
-        
         processedLocations.forEach((location) => {
           let coords = getCoords(location['Address']);
           coords.then(function(result) {
