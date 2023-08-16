@@ -40,7 +40,7 @@ export function OnClick ({Organization_Name, Address, Date_Start, Time_Start, Ti
               </p>
               <div className="rectangle" />
               <p className="the-sacred-heart">
-                {Details}}
+                {Details}
               </p>
             </div>
           </div>

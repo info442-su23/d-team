@@ -30,10 +30,7 @@ const App = () => {
       sheetId: "1RimXeXxItN-lCw-NTtGfyT0Y7fGVGU2a4ed8tEBH050",
     });    
 
-    // load the api to the google maps api
-    const { isLoaded } = useLoadScript({
-      googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0" 
-    });
+    Geocode.setApiKey("AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0");
     
     if(loading) {
       console.log("Loading");
@@ -42,6 +39,11 @@ const App = () => {
     if(error) {
       console.error("Error");
     }
+
+    // load the api to the google maps api
+    const { isLoaded } = useLoadScript({
+      googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0" 
+    });
 
     /*const filterCallback = (type, data_start, date_end) => {
       console.log(markers);
@@ -76,29 +78,47 @@ const App = () => {
     useEffect(() => {
       if(data.length !== 0 ) {
         const locations = data[0].data;
-        console.log(locations);
-        const processedLocations = locations.map((location, index) => ({
-          id: index,
-          // steven: address to coordinates function; returns promise, need promise results, check console for full details
-          center: Geocode.fromAddress(location['Location Address']).then((response) => {
-            console.log(response.results[0].geometry.location);
-            return response.results[0].geometry.location
+        let processedLocations = 
+          locations.map((location, index) =>   
+          ({
+            id: index,
+            // steven: address to coordinates function; returns promise, need promise results, check console for full details
+            /*center: getCoords(location['Location Address']).then(function(result) {
+              location.center = result;
+            }),*/
+            Address: location['Location Address'],
+            Type: location['Select opportunity type'],
+            Organization_Name: location['Organization Name'],
+            Volunteers: location['Number of volunteers needed?'],
+            Date_Start: location['Select start date'],
+            Virtual: location['Is this a virtual opportunity?'],
+            Time_Start: location['Select start time'],
+            Time_End: location['Select end time'],
+            // steven: not working, perhaps change the column name to something simpler?
+            Description: location['Please provide a description of this position\'s responsibilities and other useful details for volunteers']
           }),
-          Address: location['Location Address'],
-          Type: location['Select opportunity type'],
-          Organization_Name: location['Organization Name'],
-          Volunteers: location['Number of volunteers needed?'],
-          Date_Start: location['Select start date'],
-          Virtual: location['Is this a virtual opportunity?'],
-          Time_Start: location['Select start time'],
-          Time_End: location['Select end time'],
-          // steven: not working, perhaps change the column name to something simpler?
-          Description: location['Please provide a description of this position\'s responsibilities and other useful details for volunteers']
-        }))
-        console.log(processedLocations);
+        )        
+        
+        processedLocations.forEach((location) => {
+          let coords = getCoords(location['Address']);
+          coords.then(function(result) {
+            location.center = result;
+          })
+        })
         setMarkers(processedLocations);
       }
     }, [data])
+
+    function getCoords(address) {
+      return Geocode.fromAddress(address).then((response) => {
+        //console.log(response.results[0].geometry.location);
+        return response.results[0].geometry.location;
+      })
+    }
+
+
+
+    
 
     const handleLoginSuccess = (username, email, password) => {
         setUsername(username);
@@ -152,7 +172,7 @@ const App = () => {
 
                       />
                     } />
-                    <Route path="/Map" element={isLoaded ? //making sure we load using the api key here
+                    <Route path="/Map" element={isLoaded ? 
                       <Map
                         markers={markers} //we pass in the markers with the google sheets data here
                         loggedIn={loggedIn} 

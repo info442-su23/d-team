@@ -10,7 +10,7 @@ const center = {
     lng: -122.32661497671403
 };
 
-const EXAMPLE_MARKERS = 
+/*const EXAMPLE_MARKERS = 
 [
   {
       "id": 0,
@@ -84,7 +84,7 @@ const EXAMPLE_MARKERS =
       "Time_Start": "12:00:00 PM",
       "Time_End": "2:00:00 PM"
   }
-];
+]; */
 
 // steven: example use of geocode to get coords
 /*const convertToLatLong = async (address) => {
@@ -120,7 +120,7 @@ export function Map({ markers, loggedIn, selectedPage, showSignIn, setShowSignIn
 
   const [activeMarker, setActiveMarker] = useState(null);
 
-  //console.log(markers);
+  console.log(markers);
 
   const handleActiveMarker = (marker) => {
     if (marker === activeMarker) {
@@ -139,7 +139,7 @@ export function Map({ markers, loggedIn, selectedPage, showSignIn, setShowSignIn
         onClick={() => setActiveMarker(null)}
         mapContainerStyle={{ width: "90vw", height: "90vh", margin: "auto"}}
         >
-        {EXAMPLE_MARKERS.map((marker) => ( // steven: for every marker in EXAMPLE_MARKERS, use the data to construct a marker element
+        {markers.map((marker) => ( // steven: for every marker in EXAMPLE_MARKERS, use the data to construct a marker element
           <MarkerF
             key={marker.id}
             position={marker.center}
