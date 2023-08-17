@@ -36,11 +36,11 @@ export function OnClick ({Organization_Name, Address, Date_Start, Time_Start, Ti
                   <br />
                 </span>
                 <span className="span">Location:</span>
-                <span className="text-wrapper-2"> 232 Warren Ave N, Seattle, WA 98109 </span>
+                <span className="text-wrapper-2"> {Address} </span>
               </p>
               <div className="rectangle" />
               <p className="the-sacred-heart">
-                {Details}
+                Details: {Details}
               </p>
             </div>
           </div>

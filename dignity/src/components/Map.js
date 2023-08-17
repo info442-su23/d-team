@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GoogleMap, InfoWindowF, MarkerF } from '@react-google-maps/api';
 import { MapPage } from "./MapPage";
 import { OnClick } from "./OnClick";
+import { Filter } from "./Filter";
 //import useGoogleSheetsData from "../index";
 //import useGoogleSheetsData from "..";
 
@@ -116,8 +117,7 @@ export function Map({ markers, loggedIn, selectedPage, showSignIn, setShowSignIn
       console.log(showSignIn);
   };
 
-  //setLoggedIn(true);
-
+  const [showWaiverForm, setShowWaiverForm] = useState(false);
   const [activeMarker, setActiveMarker] = useState(null);
 
   console.log(markers);
@@ -132,14 +132,15 @@ export function Map({ markers, loggedIn, selectedPage, showSignIn, setShowSignIn
   return (
       <div>
       <MapPage/>
+      <Filter/>
       <GoogleMap
-        //onLoad={handleOnLoad}
         zoom={12}
         center={center}
         onClick={() => setActiveMarker(null)}
         mapContainerStyle={{ width: "90vw", height: "90vh", margin: "auto"}}
         >
-        {markers.map((marker) => ( // steven: for every marker in EXAMPLE_MARKERS, use the data to construct a marker element
+        
+        {markers.map((marker) => ( // steven: for every marker, use the data to construct a marker element
           <MarkerF
             key={marker.id}
             position={marker.center}

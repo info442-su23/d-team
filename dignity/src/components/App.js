@@ -93,11 +93,11 @@ const App = () => {
             Description: location['Please provide a description of this position\'s responsibilities and other useful details for volunteers.']
           }),
         )        
-        processedLocations.forEach((location) => {
+        processedLocations.forEach((location, index) => {
           let coords = getCoords(location['Address']);
           coords.then(function(result) {
             location.center = result;
-          })
+          });
         })
         setMarkers(processedLocations);
       }
