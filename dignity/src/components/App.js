@@ -23,7 +23,6 @@ const App = () => {
     const [selectedPage, setSelectedPage] = useState("Home");
     const [markers, setMarkers] = useState([]);
 
-
     // load google sheets data
     const { data, loading, error } = useGoogleSheets({
       apiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0", 
@@ -51,7 +50,6 @@ const App = () => {
       console.log(filteredMarkers);
       setMarkers(filteredMarkers);
     }*/
-
 
     //sign in handlers
     const handleOptionClick = (page) => {
@@ -110,10 +108,6 @@ const App = () => {
       })
     }
 
-
-
-    
-
     const handleLoginSuccess = (username, email, password) => {
         setUsername(username);
         setEmail(email);
@@ -149,7 +143,7 @@ const App = () => {
               handleSignInClick={handleSignInClick} 
               handleSigninClose={handleSignInClose} 
               handleOptionClick={handleOptionClick} 
-              handleLogout={handleLogout}      
+              handleLogout={handleLogout}
             />
             <div>
                 <Routes>
