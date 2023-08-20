@@ -44,13 +44,6 @@ const App = () => {
       googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0" 
     });
 
-    /*const filterCallback = (type, data_start, date_end) => {
-      console.log(markers);
-      let filteredMarkers= markers.filter(marker => marker.location.toLowerCase().includes(search));
-      console.log(filteredMarkers);
-      setMarkers(filteredMarkers);
-    }*/
-
     //sign in handlers
     const handleOptionClick = (page) => {
         setSelectedPage(page);
@@ -76,7 +69,13 @@ const App = () => {
     useEffect(() => {
       if(data.length !== 0 ) {
         const locations = data[0].data;
-        let processedLocations = 
+        processLocations(locations);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [data])
+
+    function processLocations(locations) {
+      let processedLocations = 
           locations.map((location, index) =>   
           ({
             id: index,
@@ -98,8 +97,7 @@ const App = () => {
           });
         })
         setMarkers(processedLocations);
-      }
-    }, [data])
+    }
 
     function getCoords(address) {
       return Geocode.fromAddress(address).then((response) => {
@@ -107,6 +105,26 @@ const App = () => {
         return response.results[0].geometry.location;
       })
     }
+    
+    function filterCallback(type, virtual, zipCode) {
+      if(data.length !== 0 ) {
+        const locations = data[0].data;
+        processLocations(locations);
+        console.log(markers);
+        //console.log(markers);
+        let filteredLocations = markers.filter(marker => marker.Type === type && marker.Virtual === virtual && marker.Address.includes(zipCode));
+        console.log(filteredLocations);
+        setMarkers(filteredLocations);
+      }
+    }
+
+    /*function resetFilters() {
+      if(data.length !== 0 ) {
+        const locations = data[0].data;
+        processLocations(locations);
+        console.log("test")
+      }
+    }*/
 
     const handleLoginSuccess = (username, email, password) => {
         setUsername(username);
@@ -173,6 +191,7 @@ const App = () => {
                         setSelectedPage={setSelectedPage} 
                         handleSignInClick={handleSignInClick} 
                         handleSigninClose={handleSignInClose}
+                        filterCallback={filterCallback}
                       /> : null} />
                     <Route path="/Creator" element={<Creator />} />
                 </Routes>

@@ -9,7 +9,7 @@
 
 /* Map */
 .Map {
-    height: 100vh;
+    height: 50vh;
     width: 100vw;
 }
 
@@ -612,7 +612,7 @@ button {
 }
 
 .mapPage .overlap {
-    /* background-image: url(./map-pin-3.png); */
+    background-image: url("../public/imgs/map-pin.png"); 
     background-size: 100% 100%;
     height: 130px;
     left: 396px;
@@ -1064,46 +1064,91 @@ button {
     margin-top: 5px;
 }
 
+/* FILTER BUTTON */
+
+.filter-button-wrapper, .apply-filter-button-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.filter-button, .apply-filter-button {
+    background-color: #31668c;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #00000040, 0px 4px 4px #00000040;
+    height: 30px;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    font-family: "Rubik-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+  
+.filterButton .text-wrapper {
+color: #ffffff;
+font-family: "Rubik-SemiBold", Helvetica;
+font-size: 34px;
+font-weight: 600;
+left: 57px;
+letter-spacing: 0;
+line-height: normal;
+top: 21px;
+white-space: nowrap;
+}
+
+
 /* FILTER */
 
 .filter {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .filter .overlap-group-wrapper {
-  background-color: #ffffff;
-  border: 1px none;
-  height: 1385px;
-  width: 909px;
+    background-color: #ffffff;
+    border: 1px none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .filter .overlap-group {
-  background-color: #ffffff;
-  border: 7px solid;
-  border-color: #709cde;
-  height: 1320px;
-  left: 33px;
-  position: relative;
-  top: 41px;
-  width: 847px;
+    background-color: #ffffff;
+    border: 3px solid;
+    border-color: #709cde;
+    height: 100%;
+    left: 33px;
+    /* position: relative; */
+    top: 41px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .filter .text-wrapper {
-  color: #31668c;
-  font-family: "Rubik-Medium", Helvetica;
-  font-size: 47px;
-  font-weight: 500;
-  left: 355px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-shadow: 0px 4px 4px #00000040;
-  top: 34px;
-  white-space: nowrap;
+    color: #31668c;
+    font-family: "Rubik-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    text-shadow: 0px 4px 4px #00000040;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .filter .expand-left-instance {
@@ -1111,30 +1156,15 @@ button {
   top: 35px !important;
 }
 
-.filter .div {
+.filter label, .filter h2 {
   color: #31668c;
   font-family: "Rubik-SemiBold", Helvetica;
-  font-size: 25px;
+  font-size: 10px;
   font-weight: 600;
-  left: 36px;
   letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 135px;
   white-space: nowrap;
-}
+  line-height: 100%;
 
-.filter .text-wrapper-2 {
-  color: #31668c;
-  font-family: "Rubik-SemiBold", Helvetica;
-  font-size: 25px;
-  font-weight: 600;
-  left: 28px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 570px;
-  white-space: nowrap;
 }
 
 .filter .p {
@@ -1151,27 +1181,39 @@ button {
 }
 
 .filter .overlap {
-  background-color: #dbb38ea8;
-  border-radius: 70px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 45px;
-  left: 43px;
-  position: absolute;
-  top: 197px;
-  width: 723px;
+    background-color: #dbb38ea8;
+    border-radius: 70px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 15px;
+    width: 100%;
+}
+
+.filter .filter-dropdown {
+    background-color: #dbb38ea8;
+    height: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    color: #31668c;
+    font-family: "Rubik-SemiBold", Helvetica;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    display: flex;
 }
 
 .filter .text-wrapper-3 {
-  color: #31668c;
-  font-family: "Rubik-Medium", Helvetica;
-  font-size: 24px;
-  font-weight: 500;
-  left: 311px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 7px;
-  white-space: nowrap;
+    color: #31668c;
+    font-family: "Rubik-Medium", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    left: 311px;
+    letter-spacing: 0;
+    line-height: 150%;
+    /* position: absolute; */
+    top: 7px;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .filter .text-wrapper-4 {
@@ -1597,7 +1639,7 @@ button {
 }
 
 .hover .overlap {
-  background-image: url(../public/imgs/map-pin.png);
+  background-image: url("../public/imgs/map-pin.png");
   background-size: 100% 100%;
   height: 138px;
   left: 218px;
@@ -1740,7 +1782,7 @@ button {
 }
 
 .onClick .circle-wrapper {
-  background-image: url(../public/imgs/map-pin.png);
+  background-image: url("../public/imgs/map-pin.png");
   background-size: 100% 100%;
   height: 244px;
   left: 38px;
@@ -1919,3 +1961,5 @@ button {
     }
 
 }
+
+
