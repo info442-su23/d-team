@@ -220,51 +220,55 @@ export default function Profile({ loggedIn, username, password, email, isWaiverF
 
     return (
         <div className="profile">
-            {loggedIn && (
+            {loggedIn ? (
                 <div className="div">
-                <div className="ellipse" />
-                <div className="volunteer">{`@${username}`}</div>
-                <p className="email">
-                    Email: {email}
-                    <br />
-                    <br />
-                    Password: {password}
-                    <br />
-                    <br />
-                    Phone Number: 7606889160
-                    <br />
-                    <br />
-                    Address: 123 University Way Seattle, Wa 98105
-                </p>
-                <div className="overlap-group">
-                    <p className="instructions">Before Attending A Volunteer Opportunity, Fill Out The Waiver Below</p>
-                    {!isWaiverFormComplete ? (
-                    <div className="waiver-form" onClick={handleWaiverFormClick}>
-                        https://www.waiverform.com/2432hsidofiu
+                    <div className="ellipse" />
+                    <div className="volunteer">{`@${username}`}</div>
+                    <p className="email">
+                        Email: {email}
+                        <br />
+                        <br />
+                        Password: {password}
+                        <br />
+                        <br />
+                        Phone Number: 7606889160
+                        <br />
+                        <br />
+                        Address: 123 University Way Seattle, Wa 98105
+                    </p>
+                    <div className="overlap-group">
+                        <p className="instructions">Before Attending A Volunteer Opportunity, Fill Out The Waiver Below</p>
+                        {!isWaiverFormComplete ? (
+                            <div className="waiver-form" onClick={handleWaiverFormClick}>
+                                https://www.waiverform.com/2432hsidofiu
+                            </div>
+                        ) : (
+                            <div className="waiver-form-disabled">
+                                https://www.waiverform.com/2432hsidofiu (Completed)
+                            </div>
+                        )}
+                        <div className="rectangle" />
+                        {isWaiverFormComplete && (
+                            <div className="tick-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="#4f9dd5"
+                                    width="24px"
+                                    height="24px"
+                                >
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                </svg>
+                            </div>
+                        )}
+                        <div className="text-wrapper">Mark Complete</div>
                     </div>
-                    ) : (
-                    <div className="waiver-form-disabled">
-                        https://www.waiverform.com/2432hsidofiu (Completed)
-                    </div>
-                    )}
-                    <div className="rectangle" />
-                    {isWaiverFormComplete && (
-                    <div className="tick-icon">
-                        <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="#4f9dd5"
-                        width="24px"
-                        height="24px"
-                        >
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                        </svg>
-                    </div>
-                    )}
-                    <div className="text-wrapper">Mark Complete</div>
+                    <div className="text-wrapper-2">Edit Profile</div>
                 </div>
-                <div className="text-wrapper-2">Edit Profile</div>
+            ) : (
+                <div className="not-logged-in-message">
+                    Please log in/create account to access your profile.
                 </div>
             )}
 

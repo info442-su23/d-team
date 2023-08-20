@@ -7,8 +7,8 @@ export default function Footer() {
             <div className="DIGNITY">Dignity</div>
             <div className="contact">
                 Contact Us:
-                info@dignity.com | 
-                (206)-123-4567
+                <a href="mailto:info@dignity.com?">info@dignity.com </a> | 
+                <a href="tel:2061234567"> (206)-123-4567</a>
             </div>
             <div className="divider" />
             <div className="element-tag">© 2023 Dignity | All Rights Reserved</div>

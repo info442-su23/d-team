@@ -23,7 +23,6 @@ const App = () => {
     const [selectedPage, setSelectedPage] = useState("Home");
     const [markers, setMarkers] = useState([]);
 
-
     // load google sheets data
     const { data, loading, error } = useGoogleSheets({
       apiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0", 
@@ -44,7 +43,6 @@ const App = () => {
     const { isLoaded } = useLoadScript({
       googleMapsApiKey: "AIzaSyCptULJKSbbS6Oad0nFWiHEImiMkPrpDC0" 
     });
-
 
     //sign in handlers
     const handleOptionClick = (page) => {
@@ -163,7 +161,7 @@ const App = () => {
               handleSignInClick={handleSignInClick} 
               handleSigninClose={handleSignInClose} 
               handleOptionClick={handleOptionClick} 
-              handleLogout={handleLogout}      
+              handleLogout={handleLogout}
             />
             <div>
                 <Routes>

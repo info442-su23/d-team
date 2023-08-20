@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import SignIn from './SignIn';
 
 export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignIn, users, setUsers, onLoginSuccess }) {
-    const navigate = useNavigate();
-    const [selectedPage, setSelectedPage] = useState("Home");
-    
-    const handleOptionClick = (page) => {
-        setSelectedPage(page);
-    };
+    const location = useLocation();
 
     const handleSignInClick = () => {
         setShowSignIn(true);
@@ -23,7 +18,6 @@ export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignI
     const handleLogout = () => {
         localStorage.removeItem('userToken');
         setLoggedIn(false);
-        navigate('/');
     };
 
     return (
@@ -43,22 +37,22 @@ export default function Navbar({ loggedIn, setLoggedIn, showSignIn, setShowSignI
                 <div className="Dignity" style={{ color: 'white', fontSize: 24, fontWeight: '700', marginLeft: 10 }}><Link to={'/'}>DIGNITY</Link></div>
             </div>
             <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 30, color: 'white', fontSize: 20, fontWeight: '700' }}>
-                <div className={selectedPage === 'HomePage' ? 'active' : ''} onClick={() => handleOptionClick('HomePage')}>
+                <div className={location.pathname === '/' ? 'active' : ''}>
                     <Link to={'/'}>Home</Link>
                 </div>
-                <div className={selectedPage === 'Profile' ? 'active' : ''} onClick={() => handleOptionClick('Profile')}>
+                <div className={location.pathname === '/Profile' ? 'active' : ''}>
                     <Link to={'/Profile'}>Profile</Link>
                 </div>
-                <div className={selectedPage === 'VolunteerMap' ? 'active' : ''} onClick={() => handleOptionClick('VolunteerMap')}>
+                <div className={location.pathname === '/Map' ? 'active' : ''}>
                     <Link to={'/Map'}>Volunteer Map</Link>
                 </div>
-                <div className={selectedPage === 'Creator' ? 'active' : ''} onClick={() => handleOptionClick('Creator')}>
+                <div className={location.pathname === '/Creator' ? 'active' : ''}>
                     <Link to={'/Creator'}>Create Opportunity</Link>
                 </div>
                 {loggedIn ? (
-                    <div onClick={handleLogout} className={`logout ${selectedPage === 'LogOut' ? 'active' : ''}`}>Log Out</div>
+                    <div onClick={handleLogout} className="logout">Log Out</div>
                 ) : (
-                    <div onClick={handleSignInClick} className={`login ${selectedPage === 'LogIn' ? 'active' : ''}`}>Log In</div>
+                    <div onClick={handleSignInClick} className="login">Log In</div>
                 )}
             </div>
 

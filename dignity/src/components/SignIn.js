@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn, users, setUsers }) {
 
     const navigate = useNavigate();
@@ -72,8 +71,13 @@ export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn
 
         handleSignInClose();
 
-        navigate('/HomePage');
+        navigate('');
 
+    };
+
+    const isValidEmail = (email) => {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
     };
 
     const handleSubmit = (event) => {
@@ -88,6 +92,12 @@ export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn
             return;
         }
 
+        if (!signInMode && !isValidEmail(email)) {
+            setError(true);
+            setErrorMessage('Invalid email format');
+            return;
+        }
+
         if (signInMode) {
             // Sign In mode
             const user = users.find(user => user.username === username && user.password === password);
@@ -98,7 +108,7 @@ export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn
 
                 handleSignInClose();
 
-                navigate('/HomePage');
+                navigate('');
 
             } 
             else {
@@ -108,6 +118,15 @@ export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn
         } 
         else {
             // Create Account mode
+            const existingUsername = users.some(user => user.username === username);
+            const existingEmail = users.some(user => user.email === email);
+
+            if (existingUsername || existingEmail) {
+                setError(true);
+                setErrorMessage('Username/email already exists');
+                return;
+            }
+
             const newUser = { username, password, email };
             setUsers(prevUsers => [...prevUsers, newUser]);
             setNewUser(newUser);
@@ -118,7 +137,7 @@ export default function SignIn ({ handleSignInClose, onLoginSuccess, setLoggedIn
 
             handleSignInClose();
 
-            navigate('/HomePage');
+            navigate('');
 
         }
     };

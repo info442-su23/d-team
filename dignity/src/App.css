@@ -476,7 +476,11 @@ button {
     font-weight: 300;
     letter-spacing: 0;
     opacity: 0.7;
+}
 
+.contact a {
+  text-decoration: none;
+  color: #09132e;
 }
 
 .footer-UI .DIGNITY {
@@ -890,6 +894,19 @@ button {
     white-space: nowrap;
 }
 
+.profile .not-logged-in-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+
 .profile .waiver-form {
     color: #ffffff;
     font-family: "Inter-Italic", Helvetica;
@@ -1147,6 +1164,7 @@ white-space: nowrap;
   letter-spacing: 0;
   white-space: nowrap;
   line-height: 100%;
+
 }
 
 .filter .p {
