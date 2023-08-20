@@ -88,14 +88,13 @@ export function Map({ markers, loggedIn, selectedPage, showSignIn, setShowSignIn
                     <div>Volunteers Needed: {marker.Volunteers}</div>
                     <h2>Details:</h2>
                     <div>{marker.Description}</div>
-                    <div>
+                    {/*<div>
                       <a href="https://rootsinfo.org/volunteernow">Sign Up</a>
                     </div>
                     <div>
                       <a href="https://goo.gl/maps/SVg26U4cqRvsCT6i7">See in Google Maps</a>
-                    </div>
-                  </div>
-                  
+                    </div>*/}
+                  </div>                  
                 ) : (
                   <section>
                     <div>You need to sign in to volunteer!</div>
