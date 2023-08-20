@@ -1,25 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 //import { useNavigate } from "react-router-dom";
 
 export function Filter({setShowFilter, filterCallback}) {
+
+  const [errorMessage, setErrorMessage] = useState('');
+
   //const navigate = useNavigate()
   const handleFilterApply = () => {
-    setShowFilter(false);
     let zipCode = document.getElementById("zipcode").value;
+    if(/^\d{5}(-\d{4})?$/.test(zipCode) === false && zipCode !== '') {
+      setErrorMessage('Please enter a valid zipcode or leave blank');
+    } else {
+      setErrorMessage('');
+      setShowFilter(false);
     //console.log(zipCode);
-    let type = '';
-    if (document.getElementById("type").value !== "Any location") {
-      type = document.getElementById("type").value;
+      let type = '';
+      if (document.getElementById("type").value !== "Any location") {
+        type = document.getElementById("type").value;
+      }
+      
+      //console.log(type);
+      let virtual = 'No';
+      if (document.getElementById("place").value === "Virtual") {
+        virtual = "Yes";
+      }
+      //console.log(virtual);
+      filterCallback(type, virtual, zipCode);
     }
-    
-    //console.log(type);
-    let virtual = 'No';
-    if (document.getElementById("place").value === "Virtual") {
-      virtual = "Yes";
-    }
-    //console.log(virtual);
-    filterCallback(type, virtual, zipCode);
   }
 
   /*const handleFilterReset = () => {
@@ -87,6 +95,7 @@ export function Filter({setShowFilter, filterCallback}) {
             <div className="overlap-3">
               <div className="text-wrapper-19">MM/DD/YYYY</div>
             </div>*/}
+            <div className="error">{errorMessage}</div>
             <div className="apply-filter-button-wrapper"> 
               <button className="apply-filter-button" onClick={() => handleFilterApply(setShowFilter, filterCallback)}>Apply</button>
               {/*<button className="apply-filter-button" onClick={() => handleFilterReset(setShowFilter)}>Reset</button>*/}
